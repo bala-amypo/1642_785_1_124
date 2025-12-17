@@ -1,6 +1,6 @@
 package com.example.demo.entity;
 
 @Entity
-public class {
+public class PurchaseOrder{
 
 }
