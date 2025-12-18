@@ -1,5 +1,5 @@
 package com.example.demo.service.Impl;
 
-public class DiversityTargetService implements {
+public class DiversityTargetServiceImpl implements DiversityTargetService{
     
 }
