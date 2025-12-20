@@ -36,7 +36,7 @@ public class PurchaseOrderController {
          return pos.getPurchaseOrderByID(id);
     }
 
-    @GetMapping("/GET/purchase-orders")
+    @GetMapping("/GET/purchase-orderss")
     public List<PurchaseOrder>getAllPurchaseeOrders(){
          return pos.getAllPurchaseOrders();
     }
