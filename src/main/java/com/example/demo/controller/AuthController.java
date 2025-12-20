@@ -1,5 +1,5 @@
-package com.example.demo.controller;
+// package com.example.demo.controller;
 
-public class AuthController{
+// public class AuthController{
 
-}
+// }
