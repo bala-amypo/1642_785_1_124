@@ -31,11 +31,11 @@ public class PurchaseOrder {
 
     @OneToOne
     @Column(name="supplier_Pur",nullable=true)
-    private Supplier sup;
+    private Supplier supplier;
 
     @OneToOne
     @Column(name="category_pur",nullable=true)
-    private SpendCategory cat;
+    private SpendCategory category;
 
     public Long getId() {
         return id;
