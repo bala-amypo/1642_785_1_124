@@ -30,7 +30,7 @@ public class DiversityClassificationController {
         return dcs.updateClassification(id,c);
     }
 
-    @GetMapping("/GET/suppliers/{id}")
+    @GetMapping("/GET/classifications/{id}")
     public DiversityClassification retrieveDiversityById(@PathVariable Long id){
        return dcs.getById(id);
     }

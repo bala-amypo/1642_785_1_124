@@ -8,6 +8,6 @@ public interface DiversityClassificationService {
     DiversityClassification createClassification(DiversityClassification c);
     DiversityClassification updateClassification(Long id,DiversityClassification c);
     List<DiversityClassification> getAllClassifications();
-    DiversityClassification getByID(Long id);
+    DiversityClassification getById(Long id);
     void deactivateClassification(Long id);
 }
