@@ -45,4 +45,3 @@ public class DiversityClassificationController {
         dcs.deactivateClassification(id);
     }
 }
-}
