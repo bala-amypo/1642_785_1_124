@@ -1,5 +1,13 @@
-// package com.example.demo.service;
+package com.example.demo.service;
 
-// public interface DiversityClassficationSample{
-    
-// }
+import java.util.List;
+
+import com.example.demo.entity.DiversityClassification;
+
+public interface DiversityClassificationService {
+    DiversityClassification createClassification(DiversityClassification c);
+    DiversityClassification updateClassification(Long id,DiversityClassification c);
+    List<DiversityClassification> getAllClassifications();
+    DiversityClassification getByID(Long id);
+    void deactivateClassification(Long id);
+}
