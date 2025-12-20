@@ -52,8 +52,8 @@
      
 // }
 
-checking checking checking
-DiversityClassification.java
+// checking checking checking
+// DiversityClassification.java
 package com.example.demo.entity;
 
 import jakarta.persistence.Column;
