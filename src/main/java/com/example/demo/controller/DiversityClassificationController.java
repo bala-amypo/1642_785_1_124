@@ -25,7 +25,7 @@ public class DiversityClassificationController {
           return dcs.createClassification(c);
     }
 
-    @PutMapping("/PUT/suppliers/{id}")
+    @PutMapping("/PUT/classifications/{id}")
     public DiversityClassification updateValue(@PathVariable Long id,@RequestBody DiversityClassification c){
         return dcs.updateClassification(id,c);
     }
