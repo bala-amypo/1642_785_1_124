@@ -1,5 +1,5 @@
-package com.example.demo.service.Impl;
+// package com.example.demo.service.Impl;
 
-public class SupplierServiceImpl implements SupplierService{
+// public class SupplierServiceImpl implements SupplierService{
     
-}
+// }
