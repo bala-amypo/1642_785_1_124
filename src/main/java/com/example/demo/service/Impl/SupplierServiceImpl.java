@@ -1,9 +1,3 @@
-// package com.example.demo.service.Impl;
-
-// public class SupplierServiceImpl implements SupplierService{
-    
-// }
-
 package com.example.demo.service.Impl;
 
 import java.util.List;

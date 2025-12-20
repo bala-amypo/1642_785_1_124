@@ -79,7 +79,7 @@
     
     
 // }
-
+Supplier.java
 package com.example.demo.entity;
 
 import java.time.LocalDateTime;
@@ -137,3 +137,134 @@ public class Supplier {
 }
 
 
+
+SupplierServiceImpl.java
+package com.example.demo.service.Impl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.Supplier;
+import com.example.demo.repository.SupplierRepository;
+import com.example.demo.service.SupplierService;
+
+@Service
+public class SupplierServiceImpl implements SupplierService{
+    private final SupplierRepository sr;
+    public SupplierServiceImpl(SupplierRepository sr){
+        this.sr=sr;
+    }
+    @Override
+    public Supplier createSupplier(Supplier supplier){
+        return sr.save(supplier);
+    }
+
+    @Override
+    public Supplier updateSupplier(Long id,Supplier supplier){
+        if(sr.existsById(id)){
+            supplier.setId(id);
+            return sr.save(supplier);
+        }
+        return null;
+    }
+
+    @Override
+    public Supplier getSupplierById(Long id){
+        return sr.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<Supplier>getAllSuppliers(){
+        return sr.findAll();
+    }
+
+    @Override
+    public void deactivateSupplier(Long id){
+      Supplier supplier=sr.findById(id).orElse(null);
+      if(supplier!=null){
+        supplier.setIsActive(false);
+        sr.save(supplier);
+      }
+    }
+}
+
+
+SupplierController.java
+
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.entity.Supplier;
+import com.example.demo.service.SupplierService;
+
+@RestController
+public class SupplierController {
+    private final SupplierService ss;
+    public SupplierController(SupplierService ss){
+        this.ss=ss;
+    }
+
+    @PostMapping("/POST/suppliers")
+    public Supplier postSupplier(@RequestBody Supplier supplier){
+          return ss.createSupplier(supplier);
+    }
+
+    @PutMapping("/PUT/suppliers/{id}")
+    public Supplier updateValue(@PathVariable Long id,@RequestBody Supplier supplier){
+        return ss.updateSupplier(id,supplier);
+    }
+
+    @GetMapping("/GET/suppliers/{id}")
+    public Supplier retrieveSupplierById(Long id){
+       return ss.getSupplierById(id);
+    }
+
+    @GetMapping("/GET/suppliers")
+    public List<Supplier> retrieveSuppliers(){
+        return ss.getAllSuppliers();
+    }
+
+    @PutMapping("/PUT/suppliers/{id}/deactivate")
+    public void deactivateById(Long id){
+        ss.deactivateSupplier(id);
+    }
+}
+
+SupplierRepository.java
+
+package com.example.demo.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.entity.Supplier;
+
+@Repository
+public interface SupplierRepository extends JpaRepository<Supplier,Long>{
+    
+}
+
+SupplierService.java
+
+package com.example.demo.service;
+
+import java.util.List;
+
+import com.example.demo.entity.Supplier;
+
+public interface SupplierService {
+    Supplier createSupplier(Supplier supplier);
+    Supplier updateSupplier(Long id,Supplier supplier);
+    Supplier getSupplierById(Long id);
+    List<Supplier>getAllSuppliers();
+    void deactivateSupplier(Long id);
+}
