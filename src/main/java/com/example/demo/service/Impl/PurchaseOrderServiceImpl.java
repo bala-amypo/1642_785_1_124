@@ -39,8 +39,8 @@ public class PurchaseOrderServiceImpl implements PurchaseOrderService{
           return por.findAll();
     }
 
-    @Override
-    public List<PurchaseOrder>getPurchaseOrdersBySupplier(Long supplierId){
-          return por.findBySupplierIdContaining(supplierId);
-    }
+    // @Override
+    // public List<PurchaseOrder>getPurchaseOrdersBySupplier(Long supplierId){
+    //       return por.findBySupplierIdContaining(supplierId);
+    // }
 }
