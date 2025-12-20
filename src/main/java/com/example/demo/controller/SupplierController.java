@@ -38,7 +38,7 @@ public class SupplierController {
     }
 
     @GetMapping("/GET/suppliers/{id}")
-    public Supplier retrieveSupplierById(Long id){
+    public Supplier retrieveSupplierById(@PathVariable Long id){
        return ss.getSupplierById(id);
     }
 
@@ -48,7 +48,7 @@ public class SupplierController {
     }
 
     @PutMapping("/PUT/suppliers/{id}/deactivate")
-    public void deactivateById(Long id){
+    public void deactivateById(@PathVariable Long id){
         ss.deactivateSupplier(id);
     }
 }
