@@ -18,18 +18,18 @@ public class PurchaseOrderController {
     }
     
     @PostMapping("/POST/purchase-orders")
-    public PurchaseOrder createPurchaseeOrder(PurchaseOrder po){
+    public PurchaseOrder createPurchaseeOrder(@RequestBody PurchaseOrder po){
         return pos.createPurchaseOrder(po);
     }
 
     
     @PutMapping("/PUT/purchase-orders/{id}")
-    public PurchaseOrder updatePurchaseeOrder(@PathVariable Long id,PurchaseOrder po){
+    public PurchaseOrder updatePurchaseeOrder(@PathVariable Long id,@RequestBody PurchaseOrder po){
           return pos.updatePurchaseOrder(id, po);
     }
 
     @GetMapping("/GET/purchase-orders/{id}")
-    public PurchaseOrder getPurchaseeOrderByID(Long id){
+    public PurchaseOrder getPurchaseeOrderByID(@PathVariable Long id){
          return pos.getPurchaseOrderByID(id);
     }
 
