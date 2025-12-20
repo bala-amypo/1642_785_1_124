@@ -86,11 +86,11 @@
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-<dependency>
+<!-- <dependency>
     <groupId>org.projectlombok</groupId>
     <artifactId>lombok</artifactId>
     <version>1.18.30</version>
-</dependency>
+</dependency> -->
 					<dependency>
 						<groupId>org.apache.maven.surefire</groupId>
 						<artifactId>surefire-testng</artifactId>
