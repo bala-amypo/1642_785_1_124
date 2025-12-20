@@ -27,7 +27,7 @@ public class SpendCategoryController {
       return scs.createCategory(category);
    }
 
-    @PutMapping("/PUT/categories")
+    @PutMapping("/PUT/categories/{id}")
     public SpendCategory updateSpendCategory(@PathVariable Long id,@RequestBody SpendCategory category){
        return scs.updateCategory(id,category);
     }
