@@ -24,7 +24,7 @@ public class PurchaseOrderController {
 
     
     @PutMapping("/PUT/purchase-orders/{id}")
-    public PurchaseOrder updatePurchaseeOrder(Long id,PurchaseOrder po){
+    public PurchaseOrder updatePurchaseeOrder(@PathVariable Long id,PurchaseOrder po){
           return pos.updatePurchaseOrder(id, po);
     }
 
@@ -38,7 +38,7 @@ public class PurchaseOrderController {
          return pos.getAllPurchaseOrders();
     }
 
-    @GetMapping("/GET/supplierId")
+    @GetMapping("/GET/{supplierId}")
     public List<PurchaseOrder>getPurchaseeOrdersBySupplier(Long supplierId){
         return pos.getPurchaseOrdersBySupplier(supplierId);
     }
