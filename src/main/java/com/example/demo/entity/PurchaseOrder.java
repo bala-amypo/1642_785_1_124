@@ -30,9 +30,13 @@ public class PurchaseOrder {
 
     private String notes;
 
-    private Supplier supplier;
+    @OneToOne
+    @Column(name="supplier",nullable=true)
+    private Supplier sup;
 
-    private SpendCategory category;
+    @OneToOne
+    @Column(name="category",nullable=true)
+    private SpendCategory cat;
 
     public Long getId() {
         return id;
