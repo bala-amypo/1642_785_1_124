@@ -1,8 +1,6 @@
 package com.example.demo.entity;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -32,11 +30,11 @@ public class PurchaseOrder {
     private String notes;
 
     @OneToOne
-    @Column(name="supplier",nullable=true)
+    @Column(name="supplier_Pur",nullable=true)
     private Supplier sup;
 
     @OneToOne
-    @Column(name="category",nullable=true)
+    @Column(name="category_pur",nullable=true)
     private SpendCategory cat;
 
     public Long getId() {
