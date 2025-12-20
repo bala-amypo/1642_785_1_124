@@ -9,5 +9,7 @@ import com.example.demo.entity.PurchaseOrder;
 
 @Repository
 public interface PurchaseOrderRepository extends JpaRepository<PurchaseOrder,Long>{
-    List<PurchaseOrder>findBySupplierIdContaining(Long purchaseOrder);
+    // List<PurchaseOrder>findBySupplierIdContaining(Long purchaseOrder);
+    List<PurchaseOrder> findBySupplier_Id(Long supplierId);
+
 }
