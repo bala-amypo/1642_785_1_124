@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.entity.DiversityClassification;
 import com.example.demo.service.DiversityClassificationService;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @RestController
 public class DiversityClassificationController {
