@@ -44,6 +44,7 @@ public class DiversityClassificationServiceImpl implements DiversityClassificati
        DiversityClassification dc=dcr.findById(id).orElse(null);
        if(dc!=null){
         dc.setActive(false);
+        dcr.save(dc);
        }
     }
 }
