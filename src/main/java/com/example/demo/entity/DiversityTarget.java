@@ -84,7 +84,7 @@ public class DiversityTarget {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
-    private int Year;
+    private int year;
     
     @Min(0)
     @Max(100)
@@ -105,11 +105,11 @@ public class DiversityTarget {
     }
 
     public int getTargetYear() {
-        return Year;
+        return year;
     }
 
-    public void setTargetYear(int Year) {
-        this.Year = Year;
+    public void setTargetYear(int year) {
+        this.year = year;
     }
 
     public Double getTargetPercentage() {
@@ -136,10 +136,10 @@ public class DiversityTarget {
         this.classfication = classfication;
     }
 
-    public DiversityTarget(Long id, int targetYear, @Min(0) @Max(100) Double targetPercentage, Boolean active,
+    public DiversityTarget(Long id, int year, @Min(0) @Max(100) Double targetPercentage, Boolean active,
             DiversityClassification classfication) {
         this.id = id;
-        this.Year = Year;
+        this.year = year;
         this.targetPercentage = targetPercentage;
         this.active = active;
         this.classfication = classfication;
