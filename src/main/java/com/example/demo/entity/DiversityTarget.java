@@ -84,7 +84,7 @@ public class DiversityTarget {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
-    private int targetYear;
+    private int Year;
     
     @Min(0)
     @Max(100)
