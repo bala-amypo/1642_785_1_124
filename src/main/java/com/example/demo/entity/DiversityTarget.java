@@ -105,11 +105,11 @@ public class DiversityTarget {
     }
 
     public int getTargetYear() {
-        return targetYear;
+        return Year;
     }
 
-    public void setTargetYear(int targetYear) {
-        this.targetYear = targetYear;
+    public void setTargetYear(int Year) {
+        this.Year = Year;
     }
 
     public Double getTargetPercentage() {
@@ -139,7 +139,7 @@ public class DiversityTarget {
     public DiversityTarget(Long id, int targetYear, @Min(0) @Max(100) Double targetPercentage, Boolean active,
             DiversityClassification classfication) {
         this.id = id;
-        this.targetYear = targetYear;
+        this.Year = Year;
         this.targetPercentage = targetPercentage;
         this.active = active;
         this.classfication = classfication;
