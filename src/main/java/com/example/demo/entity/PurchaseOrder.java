@@ -17,13 +17,14 @@ public class PurchaseOrder {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique=true)
+    @Column(unique=true,nullable=true)
     private String poNumber;
 
-    @Positive
+    @Positive("Amount must be greater than zero")
+    @NotNull
     private BigDecimal amount;
 
-    @PastOrPresent
+    @PastOrPresent("
     private LocalDate dateIssued;
 
     private String approvedBy;

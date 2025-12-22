@@ -8,6 +8,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class DiversityTarget {
@@ -15,10 +16,12 @@ public class DiversityTarget {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     private int year;
     
     @Min(0)
     @Max(100)
+    @NotNull
     private Double targetPercentage;
     
     Boolean active=true;

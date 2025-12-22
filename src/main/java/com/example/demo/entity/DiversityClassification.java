@@ -12,12 +12,16 @@ public class DiversityClassification {
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
      private Long id;
+
      @NotNull
      @Column(unique=true)
      private String code;
+
      @NotNull
      private String description;
+
      Boolean active=true;
+     
      public Long getId() {
          return id;
      }
