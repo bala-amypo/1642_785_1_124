@@ -63,10 +63,10 @@ public class DiversityTarget {
     }
 
     public DiversityClassification getClassfication() {
-        return classfication;
+        return classification;
     }
 
-    public void setClassfication(DiversityClassification classfication) {
+    public void setClassfication(DiversityClassification classification) {
         this.classfication = classfication;
     }
 
@@ -76,7 +76,7 @@ public class DiversityTarget {
         this.year = year;
         this.targetPercentage = targetPercentage;
         this.active = active;
-        this.classfication = classfication;
+        this.classification = classification;
     }
 
     public DiversityTarget() {
