@@ -8,6 +8,6 @@ import org.springframework.http.HttpStatus;
 public class GlobalExceptionHandler{
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<String> handleResourceNotFoundException(ResourceNotFoundException ex){
-        return new ResponseEntity<String>(ex.getMessage());
+        return new ResponseEntity<String>(ex.getMessage(),HttpStatus.BAD_GATEWAY);
     }
 }
