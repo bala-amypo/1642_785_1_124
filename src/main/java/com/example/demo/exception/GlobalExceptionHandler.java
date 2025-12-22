@@ -6,5 +6,7 @@ import org.springframework.http.HttpStatus;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler{
-    public ResponseEntity<String> handleResourceNotFoundException(ResourceNotFoundException ex)
+    public ResponseEntity<String> handleResourceNotFoundException(ResourceNotFoundException ex){
+        return new ResponseEntity<String>
+    }
 }
