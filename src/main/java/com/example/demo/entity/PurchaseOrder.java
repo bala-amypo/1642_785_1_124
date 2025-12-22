@@ -21,7 +21,7 @@ public class PurchaseOrder {
     @Column(unique=true,nullable=true)
     private String poNumber;
 
-    @Positive("Amount must be greater than zero")
+    // @Positive(message="Amount must be greater than zero")
     @NotNull
     private BigDecimal amount;
 

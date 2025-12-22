@@ -19,7 +19,7 @@ public class PurchaseOrderServiceImpl implements PurchaseOrderService{
 
     @Override
     public PurchaseOrder createPurchaseOrder(PurchaseOrder po){
-        if(po.getAmount()<=BigDecimal.ZERO){
+        if(po.getAmount().compareTo(BigDecimal.ZERO)<=0){
             throw new BadRequestException("Purchase amount must be greater than 0");
         }
         return por.save(po);
