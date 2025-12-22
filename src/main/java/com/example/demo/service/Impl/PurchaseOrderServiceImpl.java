@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.entity.PurchaseOrder;
 import com.example.demo.repository.PurchaseOrderRepository;
 import com.example.demo.service.PurchaseOrderService;
+import java.math.BigDecimal;
 
 @Service
 public class PurchaseOrderServiceImpl implements PurchaseOrderService{
@@ -17,7 +18,7 @@ public class PurchaseOrderServiceImpl implements PurchaseOrderService{
 
     @Override
     public PurchaseOrder createPurchaseOrder(PurchaseOrder po){
-        if(po.getAmount()<=0){
+        if(po.getAmount()<=BigDecimal.ZERO){
             throw new BadRequestException("Purchase amount must be greater than 0");
         }
         return por.save(po);
