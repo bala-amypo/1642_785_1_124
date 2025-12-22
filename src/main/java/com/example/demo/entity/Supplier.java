@@ -17,17 +17,23 @@ public class Supplier {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    @Column(unique=true)
-    @NotNull
+
+    @Column(unique=true,nullable=true)
     private String name;
-    @NotNull
-    @Column(unique=true)
+
+    @Column(unique=true,nullable=true)
     private String registrationNumber;
-      @Column(unique=true)
-      @Email
+
+    @Column(unique=true)
+    @Email
     private String email;
+
+    @NotNull
     private String phone;
+
+    @NotNull
     private String address;
+
     Boolean isActive=true;
 
     private LocalDateTime createdAt;

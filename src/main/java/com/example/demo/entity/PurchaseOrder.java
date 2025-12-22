@@ -24,17 +24,22 @@ public class PurchaseOrder {
     @NotNull
     private BigDecimal amount;
 
-    @PastOrPresent("
+    @NotNull
+    @PastOrPresent
     private LocalDate dateIssued;
 
+    @NotNull
     private String approvedBy;
 
+    @NotNull
     private String notes;
 
+    @NotNull
     @OneToOne
     @JoinColumn(name="supplier_Pur",nullable=true)
     private Supplier supplier;
 
+    @NotNull
     @OneToOne
     @JoinColumn(name="category_pur",nullable=true)
     private SpendCategory category;

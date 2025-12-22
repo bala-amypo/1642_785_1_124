@@ -18,6 +18,7 @@ public class UserAccount {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     
+    @NotNull
     private String name;
 
     @Email

@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class SpendCategory {
@@ -12,9 +13,10 @@ public class SpendCategory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique=true)
+    @Column(unique=true,nullable=true)
     private String name;
 
+    @NotNull
     private String description;
 
     boolean active=true;
