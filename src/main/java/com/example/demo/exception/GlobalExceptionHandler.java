@@ -12,5 +12,8 @@ public class GlobalExceptionHandler{
         return new ResponseEntity<String>(ex.getMessage(),HttpStatus.BAD_GATEWAY);
     }
 
-    @
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity<String> handleBadRequestException(BadRequestException ex){
+        return new ResponseEntity<String>(ex.getMessage(),HttpStatus.BAD_GATEWAY);
+    }
 }
