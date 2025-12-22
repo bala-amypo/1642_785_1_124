@@ -34,7 +34,7 @@ public class UserAccount {
     @Column(nullable = false, updatable = false)
     private Timestamp createdAt;
 
-     @PrePersist
+    @PrePersist
     protected void onCreate() {
         this.createdAt = Timestamp.from(Instant.now());
     }
