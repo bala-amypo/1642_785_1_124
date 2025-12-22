@@ -28,7 +28,7 @@ public class DiversityTarget {
     
     @OneToOne
     @JoinColumn(name="classificationn",unique=true)
-    DiversityClassification classfication;
+    DiversityClassification classification;
 
     public Long getId() {
         return id;
