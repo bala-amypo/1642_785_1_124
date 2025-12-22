@@ -67,11 +67,11 @@ public class DiversityTarget {
     }
 
     public void setClassfication(DiversityClassification classification) {
-        this.classfication = classfication;
+        this.classification = classification;
     }
 
     public DiversityTarget(Long id, int year, @Min(0) @Max(100) Double targetPercentage, Boolean active,
-            DiversityClassification classfication) {
+            DiversityClassification classification) {
         this.id = id;
         this.year = year;
         this.targetPercentage = targetPercentage;
