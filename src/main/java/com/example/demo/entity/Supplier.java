@@ -208,10 +208,6 @@ public class Supplier {
         this.dc = dc;
     }
 
-    @OneToMany(mappedBy="sup",cascade=CascadeType.ALL)
-    private List<PurchaseOrder> PO;
-
-    
 
     @PrePersist
     public void onCreate(){
