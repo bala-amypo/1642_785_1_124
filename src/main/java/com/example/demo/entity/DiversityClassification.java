@@ -68,6 +68,7 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 import jakarta.persistence.ManyToMany;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class DiversityClassification {
@@ -85,6 +86,7 @@ public class DiversityClassification {
      Boolean active=true;
      
      @ManyToMany(mappedBy="dc")
+     @JsonIgnore
      private List<Supplier> supplier;
 
      public DiversityClassification(Long id){
