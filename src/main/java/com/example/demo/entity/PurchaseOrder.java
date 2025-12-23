@@ -142,6 +142,7 @@ import jakarta.validation.constraints.Positive;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.JoinColumn;
 import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class PurchaseOrder {
@@ -166,15 +167,20 @@ public class PurchaseOrder {
     @NotNull
     private String notes;
 
-    @NotNull
-    @OneToOne
-    @JoinColumn(name="supplier_Pur",nullable=true)
-    private Supplier supplier;
+    // @NotNull
+    // @OneToOne
+    // @JoinColumn(name="supplier_Pur",nullable=true)
+    // private Supplier supplier;
 
-    @NotNull
-    @OneToOne
-    @JoinColumn(name="category_pur",nullable=true)
-    private SpendCategory category;
+    // @NotNull
+    // @OneToOne
+    // @JoinColumn(name="category_pur",nullable=true)
+    // private SpendCategory category;
+
+    @ManyToOne
+    @JoinColumn(name="supplierid")
+    private PurchaseOrder PO;
+
 
     public Long getId() {
         return id;
