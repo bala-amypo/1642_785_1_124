@@ -161,6 +161,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
+import java.util.List;
 
 
 @Entity

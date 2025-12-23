@@ -67,6 +67,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
 import jakarta.persistence.ManyToMany;
+import java.util.List;
 
 @Entity
 public class DiversityClassification {
