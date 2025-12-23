@@ -83,6 +83,11 @@ public class DiversityClassification {
 
      Boolean active=true;
      
+     @ManyToMany(mappedBy="dc")
+     private List<Supplier> supplier;
+
+     public DiversityClassification(Long id){
+     this.id=id;
      public Long getId() {
          return id;
      }
