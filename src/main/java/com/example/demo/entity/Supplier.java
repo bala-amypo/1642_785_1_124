@@ -162,6 +162,7 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
+import jakarta.persistence.CascadeType;
 import java.util.List;
 
 
@@ -208,7 +209,7 @@ public class Supplier {
     }
 
     @OneToMany(mappedBy="sup",cascade=CascadeType.ALL)
-    private List<PurchaseOrder> sup
+    private List<PurchaseOrder> PO;
 
     
 
