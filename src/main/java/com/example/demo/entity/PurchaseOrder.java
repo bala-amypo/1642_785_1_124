@@ -143,6 +143,7 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.JoinColumn;
 import jakarta.validation.constraints.NotNull;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToMany;
 
 @Entity
 public class PurchaseOrder {
@@ -230,32 +231,33 @@ public class PurchaseOrder {
         this.notes = notes;
     }
 
-    public Supplier getSupplier() {
-        return supplier;
-    }
+    // public Supplier getSupplier() {
+    //     return supplier;
+    // }
 
-    public void setSupplier(Supplier supplier) {
-        this.supplier = supplier;
-    }
+    // public void setSupplier(Supplier supplier) {
+    //     this.supplier = supplier;
+    // }
 
-    public SpendCategory getCategory() {
-        return category;
-    }
+    // public SpendCategory getCategory() {
+    //     return category;
+    // }
 
-    public void setCategory(SpendCategory category) {
-        this.category = category;
-    }
+    // public void setCategory(SpendCategory category) {
+    //     this.category = category;
+    // }
 
     public PurchaseOrder(Long id, String poNumber, @Positive BigDecimal amount, @PastOrPresent LocalDate dateIssued,
-            String approvedBy, String notes, Supplier supplier, SpendCategory category) {
+            String approvedBy, String notes){
+            // , Supplier supplier, SpendCategory category) {
         this.id = id;
         this.poNumber = poNumber;
         this.amount = amount;
         this.dateIssued = dateIssued;
         this.approvedBy = approvedBy;
         this.notes = notes;
-        this.supplier = supplier;
-        this.category = category;
+        // this.supplier = supplier;
+        // this.category = category;
     }
 
     public PurchaseOrder() {
