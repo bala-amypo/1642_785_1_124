@@ -159,6 +159,7 @@ import jakarta.persistence.PreUpdate;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import java.util.List;
@@ -205,6 +206,10 @@ public class Supplier {
     public void setDc(List<DiversityClassification> dc) {
         this.dc = dc;
     }
+
+    @OneToMany
+    
+
     @PrePersist
     public void onCreate(){
         LocalDateTime now=LocalDateTime.now();
