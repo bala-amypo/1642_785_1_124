@@ -144,6 +144,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.validation.constraints.NotNull;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class PurchaseOrder {
