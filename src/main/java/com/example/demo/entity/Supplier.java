@@ -197,6 +197,14 @@ public class Supplier {
     inverseJoinColumns=@JoinColumn(name="diversity_id")
     )
     private List<DiversityClassification> dc;
+
+    public List<DiversityClassification> getDc() {
+        return dc;
+    }
+
+    public void setDc(List<DiversityClassification> dc) {
+        this.dc = dc;
+    }
     @PrePersist
     public void onCreate(){
         LocalDateTime now=LocalDateTime.now();
