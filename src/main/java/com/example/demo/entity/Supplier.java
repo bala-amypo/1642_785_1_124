@@ -186,6 +186,11 @@ public class Supplier {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
+    @ManyToMany
+    @JoinTable(name="Supplier_DiversityClassification",
+    joinColumns=@JoinColumn(name="supplier_id"),
+    inverseJoinColumns=@JoinColumn(name="diversity_id")
+    )
     @PrePersist
     public void onCreate(){
         LocalDateTime now=LocalDateTime.now();
