@@ -179,7 +179,7 @@ public class PurchaseOrder {
 
     @ManyToOne
     @JoinColumn(name="supplierid")
-    private PurchaseOrder PO;
+    private Supplier sup;
 
 
     public Long getId() {

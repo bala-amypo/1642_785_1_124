@@ -207,8 +207,10 @@ public class Supplier {
         this.dc = dc;
     }
 
-    @OneToMany
+    @OneToMany(mappedBy="sup",cascade=CascadeType.ALL)
+    private List<PurchaseOrder> sup
 
+    
 
     @PrePersist
     public void onCreate(){
