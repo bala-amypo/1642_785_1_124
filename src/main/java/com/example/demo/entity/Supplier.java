@@ -158,6 +158,10 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+
 
 @Entity
 public class Supplier {
@@ -191,6 +195,7 @@ public class Supplier {
     joinColumns=@JoinColumn(name="supplier_id"),
     inverseJoinColumns=@JoinColumn(name="diversity_id")
     )
+    private List<DiversityClassification> dc;
     @PrePersist
     public void onCreate(){
         LocalDateTime now=LocalDateTime.now();
