@@ -142,9 +142,6 @@ import jakarta.validation.constraints.Positive;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.JoinColumn;
 import jakarta.validation.constraints.NotNull;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
 
 @Entity
 public class PurchaseOrder {
@@ -169,20 +166,15 @@ public class PurchaseOrder {
     @NotNull
     private String notes;
 
-    // @NotNull
-    // @OneToOne
-    // @JoinColumn(name="supplier_Pur",nullable=true)
-    // private Supplier supplier;
+    @NotNull
+    @OneToOne
+    @JoinColumn(name="supplier_Pur",nullable=true)
+    private Supplier supplier;
 
-    // @NotNull
-    // @OneToOne
-    // @JoinColumn(name="category_pur",nullable=true)
-    // private SpendCategory category;
-
-    @ManyToOne
-    @JoinColumn(name="supplierid")
-    private Supplier sup;
-
+    @NotNull
+    @OneToOne
+    @JoinColumn(name="category_pur",nullable=true)
+    private SpendCategory category;
 
     public Long getId() {
         return id;
@@ -232,33 +224,32 @@ public class PurchaseOrder {
         this.notes = notes;
     }
 
-    // public Supplier getSupplier() {
-    //     return supplier;
-    // }
+    public Supplier getSupplier() {
+        return supplier;
+    }
 
-    // public void setSupplier(Supplier supplier) {
-    //     this.supplier = supplier;
-    // }
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
+    }
 
-    // public SpendCategory getCategory() {
-    //     return category;
-    // }
+    public SpendCategory getCategory() {
+        return category;
+    }
 
-    // public void setCategory(SpendCategory category) {
-    //     this.category = category;
-    // }
+    public void setCategory(SpendCategory category) {
+        this.category = category;
+    }
 
     public PurchaseOrder(Long id, String poNumber, @Positive BigDecimal amount, @PastOrPresent LocalDate dateIssued,
-            String approvedBy, String notes){
-            // , Supplier supplier, SpendCategory category) {
+            String approvedBy, String notes, Supplier supplier, SpendCategory category) {
         this.id = id;
         this.poNumber = poNumber;
         this.amount = amount;
         this.dateIssued = dateIssued;
         this.approvedBy = approvedBy;
         this.notes = notes;
-        // this.supplier = supplier;
-        // this.category = category;
+        this.supplier = supplier;
+        this.category = category;
     }
 
     public PurchaseOrder() {
