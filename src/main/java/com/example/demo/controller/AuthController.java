@@ -26,8 +26,10 @@ public class AuthController {
         return uas.findByEmailOrThrow(email);
     }
 
-    @GetMapping("/POST/auth/login")
-    
+    @PostMapping("/POST/auth/login")
+    public UserAccount log_in(@RequestParam String email,@RequestParam String password){
+         return uas.login(email,password);
+    }
 }
 
 
