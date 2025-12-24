@@ -10,4 +10,5 @@ import com.example.demo.entity.UserAccount;
 public interface UserAccountService {
     String register(UserAccount user);
     UserAccount findByEmailOrThrow(String email);
+    UserAccount login(String email,String password);
 }

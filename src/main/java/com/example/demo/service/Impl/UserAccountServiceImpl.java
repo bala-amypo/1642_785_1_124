@@ -37,4 +37,9 @@ public class UserAccountServiceImpl implements UserAccountService{
          return user;
     }
 
+    @Override
+    public UserAccount login(String email,String password){
+         UserAccount user=uar.findByEmail(email);
+         
+    }
 }
