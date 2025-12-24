@@ -208,11 +208,9 @@ public class Supplier {
         this.dc = dc;
     }
 
-    @OneToMany
-    @JoinColumn(name="supplier_id")
-    private PurchaseOrder purchaseorder;
-
-
+     @OneToMany(mappedBy="supplier",cascade=CasecadeType.ALL)
+     @JsonIgnoreProperties("supplier")
+     private List<PurchaseOrder> po;
 
     @PrePersist
     public void onCreate(){
