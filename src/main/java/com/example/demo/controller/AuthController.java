@@ -16,7 +16,7 @@ public class AuthController {
          this.uas=uas;
    }
     
-   @PostMapping("/POST/user-account")
+   @PostMapping("/POST/auth/register")
     public String registerUser(@RequestBody UserAccount user){
         return uas.register(user);
     }
@@ -26,7 +26,8 @@ public class AuthController {
         return uas.findByEmailOrThrow(email);
     }
 
-    @GetMapping(
+    @GetMapping("/POST/auth/login")
+    
 }
 
 
