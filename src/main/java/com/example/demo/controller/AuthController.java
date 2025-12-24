@@ -25,6 +25,8 @@ public class AuthController {
     public UserAccount findUserByEmailOrThrow(@RequestParam String email){
         return uas.findByEmailOrThrow(email);
     }
+
+    @GetMapping(
 }
 
 
