@@ -208,7 +208,7 @@ public class Supplier {
         this.dc = dc;
     }
 
-     @OneToMany(mappedBy="supplier",cascade=CasecadeType.ALL)
+     @OneToMany(mappedBy="supplier",cascade=CascadeType.ALL)
      @JsonIgnoreProperties("supplier")
      private List<PurchaseOrder> po;
 
