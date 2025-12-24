@@ -209,6 +209,7 @@ public class Supplier {
     }
 
     @OneToMany
+    @JoinColumn(name="")
     
 
 
