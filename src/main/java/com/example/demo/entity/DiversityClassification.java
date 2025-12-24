@@ -86,7 +86,7 @@ public class DiversityClassification {
      Boolean active=true;
      
      @ManyToMany(mappedBy="dc")
-    //  @JsonIgnore
+     @JsonIgnore
      private List<Supplier> supplier;
 
      public DiversityClassification(Long id){
