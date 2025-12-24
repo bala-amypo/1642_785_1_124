@@ -16,4 +16,9 @@ public class GlobalExceptionHandler{
     public ResponseEntity<String> handleBadRequestException(BadRequestException ex){
         return new ResponseEntity<String>(ex.getMessage(),HttpStatus.BAD_GATEWAY);
     }
+
+    @ExceptionHandler(UnauthorizedException.class)
+    public ResponseEntity<String> UnauthorizedException(UnauthorizedException ex){
+        return new ResponseEntity<String>(ex.getMessage(),HttpStatus.BAD_GATEWAY);
+    }
 }
