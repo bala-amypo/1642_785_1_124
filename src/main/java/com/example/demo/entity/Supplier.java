@@ -209,9 +209,8 @@ public class Supplier {
     }
 
     @OneToMany
-    @JoinColumn(name="")
-    
-
+    @JoinColumn(name="supplier_id")
+    private PurchaseOrder purchaseorder;
 
 
 
