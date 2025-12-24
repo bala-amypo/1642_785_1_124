@@ -208,6 +208,11 @@ public class Supplier {
         this.dc = dc;
     }
 
+    @OneToMany
+    
+
+
+
 
     @PrePersist
     public void onCreate(){
