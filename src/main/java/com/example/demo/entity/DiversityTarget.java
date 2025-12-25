@@ -98,8 +98,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.ManyToOne;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
@@ -111,8 +111,8 @@ public class DiversityTarget {
     @NotNull
     private int year;
     
-    @Min(0.0)
-    @Max(100.0)
+    @DecimalMin(0.00)
+    @DecimalMax(100.00)
     @NotNull
     private Double targetPercentage;
     
