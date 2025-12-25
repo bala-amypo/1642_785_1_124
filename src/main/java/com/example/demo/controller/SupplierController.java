@@ -1,11 +1,3 @@
-// package com.example.demo.controller;
-
-// public class SupplierController{
-    
-// }
-
-
-
 package com.example.demo.controller;
 
 import java.util.List;
