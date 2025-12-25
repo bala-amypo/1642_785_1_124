@@ -111,8 +111,8 @@ public class DiversityTarget {
     @NotNull
     private int year;
     
-    @Min(0)
-    @Max(100)
+    @Min(0.0)
+    @Max(100.0)
     @NotNull
     private Double targetPercentage;
     
