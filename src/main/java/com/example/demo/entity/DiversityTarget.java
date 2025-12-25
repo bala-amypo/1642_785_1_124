@@ -116,9 +116,9 @@ public class DiversityTarget {
     // @JoinColumn(name="classificationn",unique=true)
     // DiversityClassification classification;
 
-    @ManyToOne
-    @JoinColumn(name="Diversity_Classification")
-    private DiversityClassification dc;
+    // @ManyToOne
+    // @JoinColumn(name="Diversity_Classification")
+    // private DiversityClassification dc;
 
 
     public Long getId() {
