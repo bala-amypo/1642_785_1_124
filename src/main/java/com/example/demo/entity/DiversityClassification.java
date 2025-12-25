@@ -65,6 +65,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotNull;
 import jakarta.persistence.ManyToMany;
 import java.util.List;
@@ -88,6 +89,11 @@ public class DiversityClassification {
      @ManyToMany(mappedBy="dc")
      @JsonIgnore
      private List<Supplier> supplier;
+
+     @OneToMany(mappedBy="diversity_target",cascade=CascadeType.ALL)
+     @JsonIgnoreProperties("diversity_target")
+     private List<DiversityTarget> dt;
+
 
      public DiversityClassification(Long id){
      this.id=id;

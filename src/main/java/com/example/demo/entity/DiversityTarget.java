@@ -115,6 +115,11 @@ public class DiversityTarget {
     @JoinColumn(name="classificationn",unique=true)
     DiversityClassification classification;
 
+    @ManyToOne
+    @JoinColumn(name="")
+    private Supplier supplier;
+
+
     public Long getId() {
         return id;
     }
