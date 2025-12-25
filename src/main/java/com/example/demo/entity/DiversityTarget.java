@@ -91,6 +91,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -116,8 +117,8 @@ public class DiversityTarget {
     DiversityClassification classification;
 
     @ManyToOne
-    @JoinColumn(name="")
-    private Supplier supplier;
+    @JoinColumn(name="Diversity_Classification")
+    private DiversityClassification dc;
 
 
     public Long getId() {
