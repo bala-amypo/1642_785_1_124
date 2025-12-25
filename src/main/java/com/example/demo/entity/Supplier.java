@@ -224,6 +224,7 @@ public class Supplier {
     joinColumns=@JoinColumn(name="supplier_id"),
     inverseJoinColumns=@JoinColumn(name="diversity_id")
     )
+    @JsonIgnoreProperties({"supplier","dt"}) 
     private List<DiversityClassification> dc;
 
     public List<DiversityClassification> getDc() {
