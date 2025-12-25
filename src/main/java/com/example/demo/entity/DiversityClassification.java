@@ -93,8 +93,8 @@ public class DiversityClassification {
      @JsonIgnore
      private List<Supplier> supplier;
 
-     @OneToMany(mappedBy="diversity_target",cascade=CascadeType.ALL)
-     @JsonIgnoreProperties("diversity_target")
+     @OneToMany(mappedBy="diversityClassification",cascade=CascadeType.ALL)
+     @JsonIgnoreProperties("diversityClassification")
      private List<DiversityTarget> dt;
 
 
