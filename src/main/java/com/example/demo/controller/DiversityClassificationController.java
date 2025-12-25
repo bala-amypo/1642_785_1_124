@@ -1,48 +1,48 @@
-package com.example.demo.controller;
+// package com.example.demo.controller;
 
-import java.util.List;
+// import java.util.List;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RestController;
+// import org.springframework.web.bind.annotation.GetMapping;
+// import org.springframework.web.bind.annotation.PathVariable;
+// import org.springframework.web.bind.annotation.PostMapping;
+// import org.springframework.web.bind.annotation.PutMapping;
+// import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.entity.DiversityClassification;
-import com.example.demo.service.DiversityClassificationService;
+// import com.example.demo.entity.DiversityClassification;
+// import com.example.demo.service.DiversityClassificationService;
 
-import org.springframework.web.bind.annotation.RequestBody;
+// import org.springframework.web.bind.annotation.RequestBody;
 
 
-@RestController
-public class DiversityClassificationController {
-    private final DiversityClassificationService dcs;
-    public DiversityClassificationController(DiversityClassificationService dcs){
-        this.dcs=dcs;
-    }
+// @RestController
+// public class DiversityClassificationController {
+//     private final DiversityClassificationService dcs;
+//     public DiversityClassificationController(DiversityClassificationService dcs){
+//         this.dcs=dcs;
+//     }
 
-    @PostMapping("/POST/classifications")
-    public DiversityClassification postClassification(@RequestBody DiversityClassification c){
-          return dcs.createClassification(c);
-    }
+//     @PostMapping("/POST/classifications")
+//     public DiversityClassification postClassification(@RequestBody DiversityClassification c){
+//           return dcs.createClassification(c);
+//     }
 
-    @PutMapping("/PUT/classifications/{id}")
-    public DiversityClassification updateValue(@PathVariable Long id,@RequestBody DiversityClassification c){
-        return dcs.updateClassification(id,c);
-    }
+//     @PutMapping("/PUT/classifications/{id}")
+//     public DiversityClassification updateValue(@PathVariable Long id,@RequestBody DiversityClassification c){
+//         return dcs.updateClassification(id,c);
+//     }
 
-    @GetMapping("/GET/classifications/{id}")
-    public DiversityClassification retrieveDiversityById(@PathVariable Long id){
-       return dcs.getById(id);
-    }
+//     @GetMapping("/GET/classifications/{id}")
+//     public DiversityClassification retrieveDiversityById(@PathVariable Long id){
+//        return dcs.getById(id);
+//     }
 
-    @GetMapping("/GET/classifications")
-    public List<DiversityClassification> retrieveDiversities(){
-        return dcs.getAllClassifications();
-    }
+//     @GetMapping("/GET/classifications")
+//     public List<DiversityClassification> retrieveDiversities(){
+//         return dcs.getAllClassifications();
+//     }
 
-    @PutMapping("/PUT/classifications/{id}/deactivate")
-    public void deactivateClassificationById(@PathVariable Long id){
-        dcs.deactivateClassification(id);
-    }
-}
+//     @PutMapping("/PUT/classifications/{id}/deactivate")
+//     public void deactivateClassificationById(@PathVariable Long id){
+//         dcs.deactivateClassification(id);
+//     }
+// }

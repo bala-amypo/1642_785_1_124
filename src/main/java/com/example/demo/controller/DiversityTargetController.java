@@ -1,50 +1,50 @@
-package com.example.demo.controller;
+// package com.example.demo.controller;
 
-import java.util.List;
+// import java.util.List;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RestController;
+// import org.springframework.web.bind.annotation.GetMapping;
+// import org.springframework.web.bind.annotation.PathVariable;
+// import org.springframework.web.bind.annotation.PostMapping;
+// import org.springframework.web.bind.annotation.PutMapping;
+// import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.entity.DiversityTarget;
-import com.example.demo.service.DiversityTargetService;
+// import com.example.demo.entity.DiversityTarget;
+// import com.example.demo.service.DiversityTargetService;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+// import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
-@RestController
-public class DiversityTargetController {
-    private final DiversityTargetService dts;
-    public DiversityTargetController(DiversityTargetService dts){
-        this.dts=dts;
-    }
-    @PostMapping("/POST/targets")
-    public DiversityTarget createDiversityTarget(@RequestBody DiversityTarget target){
-        return dts.createTarget(target);
-    }
+// @RestController
+// public class DiversityTargetController {
+//     private final DiversityTargetService dts;
+//     public DiversityTargetController(DiversityTargetService dts){
+//         this.dts=dts;
+//     }
+//     @PostMapping("/POST/targets")
+//     public DiversityTarget createDiversityTarget(@RequestBody DiversityTarget target){
+//         return dts.createTarget(target);
+//     }
  
-    @PutMapping("/PUT/targets/{id}")
-    public DiversityTarget updateDiversityTarget(@PathVariable Long id,@RequestBody DiversityTarget target){
-         return dts.updateTarget(id,target);
-    }
+//     @PutMapping("/PUT/targets/{id}")
+//     public DiversityTarget updateDiversityTarget(@PathVariable Long id,@RequestBody DiversityTarget target){
+//          return dts.updateTarget(id,target);
+//     }
 
-    @GetMapping("/GET/targets/years/{year}")
-    public List<DiversityTarget> getDiversityTargetsByYear(@PathVariable Integer year){
-        return dts.getTargetsByYear(year);
-    }
+//     @GetMapping("/GET/targets/years/{year}")
+//     public List<DiversityTarget> getDiversityTargetsByYear(@PathVariable Integer year){
+//         return dts.getTargetsByYear(year);
+//     }
 
-    @GetMapping("/GET/targets")
-    public List<DiversityTarget> getAllDiversityTargets(){
-        return dts.getAllTargets();
-    }
+//     @GetMapping("/GET/targets")
+//     public List<DiversityTarget> getAllDiversityTargets(){
+//         return dts.getAllTargets();
+//     }
 
-    @PutMapping("/PUT/targets/{id}/deactivate")
-    public void deactivateDiversityTarget(Long id){
-        dts.deactivateTarget(id);
-    }
+//     @PutMapping("/PUT/targets/{id}/deactivate")
+//     public void deactivateDiversityTarget(Long id){
+//         dts.deactivateTarget(id);
+//     }
     
-}
+// }
 
 
 
