@@ -112,15 +112,14 @@ public class DiversityTarget {
     
     Boolean active=true;
     
-    // @OneToOne
-    // @JoinColumn(name="classificationn",unique=true)
-    // DiversityClassification classification;
+    @OneToOne
+    @JoinColumn(name="classificationn",unique=true)
+    DiversityClassification classification;
 
     // @ManyToOne
     // @JoinColumn(name="Diversity_Classification")
     // private DiversityClassification dc;
-
-
+    
     public Long getId() {
         return id;
     }
