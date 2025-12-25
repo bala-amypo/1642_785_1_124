@@ -117,10 +117,6 @@ public class DiversityTarget {
     private Double targetPercentage;
     
     Boolean active=true;
-    
-    @OneToOne
-    @JoinColumn(name="classificationn",unique=true)
-    DiversityClassification classification;
 
     @ManyToOne
     @JoinColumn(name="classification_id")
@@ -158,21 +154,11 @@ public class DiversityTarget {
         this.active = active;
     }
 
-    public DiversityClassification getClassfication() {
-        return classification;
-    }
-
-    public void setClassfication(DiversityClassification classification) {
-        this.classification = classification;
-    }
-
-    public DiversityTarget(Long id, int year, @Min(0) @Max(100) Double targetPercentage, Boolean active,
-            DiversityClassification classification) {
+    public DiversityTarget(Long id, int year, @Min(0) @Max(100) Double targetPercentage, Boolean active) {
         this.id = id;
         this.year = year;
         this.targetPercentage = targetPercentage;
         this.active = active;
-        this.classification = classification;
     }
 
     public DiversityTarget() {
