@@ -111,8 +111,8 @@ public class DiversityTarget {
     @NotNull
     private int year;
     
-    @DecimalMin(0.00)
-    @DecimalMax(100.00)
+    @DecimalMin(value="0.00")
+    @DecimalMax(value="100.00")
     @NotNull
     private Double targetPercentage;
     
@@ -154,7 +154,7 @@ public class DiversityTarget {
         this.active = active;
     }
 
-    public DiversityTarget(Long id, int year, @Min(0) @Max(100) Double targetPercentage, Boolean active) {
+    public DiversityTarget(Long id, int year, @DecimalMin(0) @DecimalMax(100) Double targetPercentage, Boolean active) {
         this.id = id;
         this.year = year;
         this.targetPercentage = targetPercentage;
