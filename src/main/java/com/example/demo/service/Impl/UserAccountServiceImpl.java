@@ -1,11 +1,3 @@
-// package com.example.demo.service.Impl;
-
-// public class UserAccountServiceImpl implements UserAccountService{
-    
-// }
-
-
-
 package com.example.demo.service.Impl;
 
 import org.springframework.stereotype.Service;
