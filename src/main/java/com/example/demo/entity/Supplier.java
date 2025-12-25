@@ -166,7 +166,6 @@ import jakarta.persistence.CascadeType;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-    `
 @Entity
 public class Supplier {
     @Id

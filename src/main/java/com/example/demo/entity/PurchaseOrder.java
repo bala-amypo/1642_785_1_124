@@ -384,7 +384,7 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Positive;
 import jakarta.persistence.OneToOne;
-import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinColumn; 
 import jakarta.validation.constraints.NotNull;
 import jakarta.persistence.ManyToOne;
 
