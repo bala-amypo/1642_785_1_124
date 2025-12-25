@@ -94,6 +94,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMax;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 public class DiversityTarget {
@@ -113,7 +114,7 @@ public class DiversityTarget {
 
     @ManyToOne
     @JoinColumn(name = "classification_id")
-    @JsonIgnoreProperties("dt") // prevents recursion
+    @JsonIgnoreProperties("dt")
     private DiversityClassification dc;
 
     public DiversityTarget() {}
