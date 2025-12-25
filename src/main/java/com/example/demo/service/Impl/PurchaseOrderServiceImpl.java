@@ -1,51 +1,51 @@
-package com.example.demo.service.Impl;
+// package com.example.demo.service.Impl;
 
-import java.util.List;
+// import java.util.List;
 
-import org.springframework.stereotype.Service;
+// import org.springframework.stereotype.Service;
 
-import com.example.demo.entity.PurchaseOrder;
-import com.example.demo.repository.PurchaseOrderRepository;
-import com.example.demo.service.PurchaseOrderService;
-import com.example.demo.exception.BadRequestException;
-import java.math.BigDecimal;
+// import com.example.demo.entity.PurchaseOrder;
+// import com.example.demo.repository.PurchaseOrderRepository;
+// import com.example.demo.service.PurchaseOrderService;
+// import com.example.demo.exception.BadRequestException;
+// import java.math.BigDecimal;
 
-@Service
-public class PurchaseOrderServiceImpl implements PurchaseOrderService{
-    private final PurchaseOrderRepository por;
-    public PurchaseOrderServiceImpl(PurchaseOrderRepository por){
-        this.por=por;
-    }
+// @Service
+// public class PurchaseOrderServiceImpl implements PurchaseOrderService{
+//     private final PurchaseOrderRepository por;
+//     public PurchaseOrderServiceImpl(PurchaseOrderRepository por){
+//         this.por=por;
+//     }
 
-    @Override
-    public PurchaseOrder createPurchaseOrder(PurchaseOrder po){
-        if(po.getAmount().compareTo(BigDecimal.ZERO)<=0){
-            throw new BadRequestException("Purchase amount must be greater than 0");
-        }
-        return por.save(po);
-    }
+//     @Override
+//     public PurchaseOrder createPurchaseOrder(PurchaseOrder po){
+//         if(po.getAmount().compareTo(BigDecimal.ZERO)<=0){
+//             throw new BadRequestException("Purchase amount must be greater than 0");
+//         }
+//         return por.save(po);
+//     }
 
-    @Override
-    public PurchaseOrder updatePurchaseOrder(Long id,PurchaseOrder po){
-        if(por.existsById(id)){
-            po.setId(id);
-            return por.save(po);
-        }
-        return null;
-    }
+//     @Override
+//     public PurchaseOrder updatePurchaseOrder(Long id,PurchaseOrder po){
+//         if(por.existsById(id)){
+//             po.setId(id);
+//             return por.save(po);
+//         }
+//         return null;
+//     }
 
-    @Override
-    public PurchaseOrder getPurchaseOrderByID(Long id){
-         return por.findById(id).orElse(null);
-    }
+//     @Override
+//     public PurchaseOrder getPurchaseOrderByID(Long id){
+//          return por.findById(id).orElse(null);
+//     }
 
-    @Override
-    public List<PurchaseOrder>getAllPurchaseOrders(){
-          return por.findAll();
-    }
+//     @Override
+//     public List<PurchaseOrder>getAllPurchaseOrders(){
+//           return por.findAll();
+//     }
 
-    @Override
-    public List<PurchaseOrder>getPurchaseOrdersBySupplier(Long supplierId){
-          return por.findBySupplier_Id(supplierId);
-    }
-}
+//     @Override
+//     public List<PurchaseOrder>getPurchaseOrdersBySupplier(Long supplierId){
+//           return por.findBySupplier_Id(supplierId);
+//     }
+// }
