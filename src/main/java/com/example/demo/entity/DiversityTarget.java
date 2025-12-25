@@ -91,8 +91,8 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.DecimalMax;
-import jakarta.validation.constraints.DecimalMin;
+// import jakarta.validation.constraints.DecimalMax;
+// import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -106,8 +106,8 @@ public class DiversityTarget {
     private int year;
 
     @NotNull
-    @DecimalMin("0.00")
-    @DecimalMax("100.00")
+    // @DecimalMin("0.00")
+    // @DecimalMax("100.00")
     private Double targetPercentage;
 
     private Boolean active = true;
