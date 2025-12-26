@@ -33,11 +33,57 @@
 // }
 
 
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.context.annotation.Bean;
+// import org.springframework.context.annotation.Configuration;
+// import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+// import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+// import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+// import org.springframework.security.crypto.password.PasswordEncoder;
+// import org.springframework.security.web.SecurityFilterChain;
+// import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+// import com.example.demo.security.JwtFilter;
+
+// @Configuration
+// // @EnableMethodSecurity(prePostEnabled = true)
+// public class SecurityConfig {
+//     @Autowired
+// //     private JwtFilter jwtFilter;
+
+//     @Bean
+//     public PasswordEncoder passwordEncoder() {
+//         return new BCryptPasswordEncoder();
+//     }
+
+//     @Bean
+//     public SecurityFilterChain filterChain(HttpSecurity http)
+//             throws Exception {
+
+//         http
+//                 .csrf(csrf -> csrf.disable())
+//                 .authorizeHttpRequests(auth -> auth
+//                         .requestMatchers("/auth/**").permitAll()
+//                         .requestMatchers(
+//                                 "/swagger-ui/**",
+//                                 "/v3/api-docs/**")
+//                         .permitAll()
+//                         .anyRequest().authenticated());
+//                 // .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+
+//         return http.build();
+//     }
+
+// }
+
+package com.example.demo.config;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -46,10 +92,11 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.example.demo.security.JwtFilter;
 
 @Configuration
-// @EnableMethodSecurity(prePostEnabled = true)
+@EnableMethodSecurity
 public class SecurityConfig {
+
     @Autowired
-//     private JwtFilter jwtFilter;
+    private JwtFilter jwtFilter;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -57,21 +104,24 @@ public class SecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http)
-            throws Exception {
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http
-                .csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**").permitAll()
-                        .requestMatchers(
-                                "/swagger-ui/**",
-                                "/v3/api-docs/**")
-                        .permitAll()
-                        .anyRequest().authenticated());
-                // .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+            .csrf(csrf -> csrf.disable())
+            .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers(
+                    "/swagger-ui.html",
+                    "/swagger-ui/**",
+                    "/v3/api-docs/**",
+                    "/v3/api-docs/swagger-config",
+                    "/swagger-ui/swagger-config",
+                    "/auth/**"
+                ).permitAll()
+                .anyRequest().authenticated()
+            )
+            .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
-
 }
