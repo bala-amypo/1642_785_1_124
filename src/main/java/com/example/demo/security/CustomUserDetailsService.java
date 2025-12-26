@@ -1,33 +1,33 @@
-package com.example.demo.security;
+// package com.example.demo.security;
 
-import java.util.List;
+// import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.security.core.authority.SimpleGrantedAuthority;
+// import org.springframework.security.core.userdetails.UserDetails;
+// import org.springframework.security.core.userdetails.UserDetailsService;
+// import org.springframework.security.core.userdetails.UsernameNotFoundException;
+// import org.springframework.stereotype.Service;
 
-import com.example.demo.entity.UserAccount;
-import com.example.demo.repository.UserAccountRepository;
+// import com.example.demo.entity.UserAccount;
+// import com.example.demo.repository.UserAccountRepository;
 
-@Service
-public class CustomUserDetailsService implements UserDetailsService {
+// @Service
+// public class CustomUserDetailsService implements UserDetailsService {
 
-    @Autowired
-    private UserAccountRepository repo;
+//     @Autowired
+//     private UserAccountRepository repo;
 
-    @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+//     @Override
+//     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 
-        UserAccount user = repo.findByEmail(email)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + email));
+//         UserAccount user = repo.findByEmail(email)
+//                 .orElseThrow(() -> new UsernameNotFoundException("User not found with email: " + email));
 
-        return new org.springframework.security.core.userdetails.User(
-                user.getEmail(),
-                user.getPassword(),
-                List.of(new SimpleGrantedAuthority("ROLE_" + user.getRole()))
-        );
-    }
-}
+//         return new org.springframework.security.core.userdetails.User(
+//                 user.getEmail(),
+//                 user.getPassword(),
+//                 List.of(new SimpleGrantedAuthority("ROLE_" + user.getRole()))
+//         );
+//     }
+// }
