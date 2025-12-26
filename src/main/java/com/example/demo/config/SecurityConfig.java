@@ -43,7 +43,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.example.demo.Security.JwtFilter;
+import com.example.demo.security.JwtFilter;
 
 @Configuration
 // @EnableMethodSecurity(prePostEnabled = true)
