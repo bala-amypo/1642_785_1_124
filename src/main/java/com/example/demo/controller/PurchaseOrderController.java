@@ -56,7 +56,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PathVariable;
-import java.uitl.List;
+import java.util.List;
 import com.example.demo.entity.PurchaseOrder;
 import com.example.demo.service.PurchaseOrderService;
 
