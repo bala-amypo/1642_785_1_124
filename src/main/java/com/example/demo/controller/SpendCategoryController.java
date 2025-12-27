@@ -79,7 +79,8 @@ public class SpendCategoryController {
         return service.getAllCategories();
     }
 
-    @PutMapping("/")
+    @PutMapping("/PUT/categories/{id}/deactivate")
+    public void deactivateCategoryByID
 }
 
 
