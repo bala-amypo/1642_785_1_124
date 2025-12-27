@@ -67,26 +67,26 @@ public class SupplierController {
 
     @PostMapping("/POST/suppliers")
     public Supplier postSupplier(@RequestBody Supplier supplier){
-          return ss.createSupplier(supplier);
+          return supplierService.createSupplier(supplier);
     }
 
     @PutMapping("/PUT/suppliers/{id}")
     public Supplier updateValue(@PathVariable Long id,@RequestBody Supplier supplier){
-        return ss.updateSupplier(id,supplier);
+        return supplierService.updateSupplier(id,supplier);
     }
 
     @GetMapping("/GET/suppliers/{id}")
     public Supplier retrieveSupplierById(@PathVariable Long id){
-       return ss.getSupplierById(id);
+       return supplierService.getSupplierById(id);
     }
 
     @GetMapping("/GET/suppliers")
     public List<Supplier> retrieveSuppliers(){
-        return ss.getAllSuppliers();
+        return supplierService.getAllSuppliers();
     }
 
     @PutMapping("/PUT/suppliers/{id}/deactivate")
     public void deactivateById(@PathVariable Long id){
-        ss.deactivateSupplier(id);
+        supplierService.deactivateSupplier(id);
     }
 }
