@@ -69,6 +69,17 @@ package com.example.demo.controller;
 import com.example.demo.service.DiversityClassificationService;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
+import java,util
+
+
+import com.example.demo.entity.DiversityClassification;
+import com.example.demo.service.DiversityClassificationService;
 @RestController
 @RequestMapping("/diversityclassification")
 public class DiversityClassificationController {
@@ -77,14 +88,9 @@ public class DiversityClassificationController {
     public DiversityClassificationController(DiversityClassificationService service) {
         this.service = service;
     }
-       @PutMapping("/PUT/classifications/{id}")
+    @PutMapping("/PUT/classifications/{id}")
     public DiversityClassification updateValue(@PathVariable Long id,@RequestBody DiversityClassification c){
         return service.updateClassification(id,c);
-    }
-
-    @GetMapping("/GET/classifications/{id}")
-    public DiversityClassification retrieveDiversityById(@PathVariable Long id){
-       return service.getById(id);
     }
 
     @GetMapping("/GET/classifications")
