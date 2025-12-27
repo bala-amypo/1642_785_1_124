@@ -62,6 +62,7 @@ public class DiversityTarget {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    @NotNull
     private Integer targetYear;
     private Double targetPercentage;
     private Boolean active;
