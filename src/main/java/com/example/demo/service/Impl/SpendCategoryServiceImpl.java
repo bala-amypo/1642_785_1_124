@@ -14,24 +14,24 @@
 //     public SpendCategoryServiceImpl(SpendCategoryRepository scr){
 //         this.scr=scr;
 //     }
-//     @Override
-//     public SpendCategory createCategory(SpendCategory category){
-//         return scr.save(category);
-//     }
+    // @Override
+    // public SpendCategory createCategory(SpendCategory category){
+    //     return scr.save(category);
+    // }
 
-//      @Override
-//     public SpendCategory updateCategory(Long id,SpendCategory category){
-//         if(scr.existsById(id)){
-//             category.setId(id);
-//             return scr.save(category);
-//         }
-//         return null;
-//     }
+    //  @Override
+    // public SpendCategory updateCategory(Long id,SpendCategory category){
+    //     if(scr.existsById(id)){
+    //         category.setId(id);
+    //         return scr.save(category);
+    //     }
+    //     return null;
+    // }
 
-//     @Override
-//     public SpendCategory getCategoryById(Long id){
-//          return scr.findById(id).orElse(null);
-//     }
+    // @Override
+    // public SpendCategory getCategoryById(Long id){
+    //      return scr.findById(id).orElse(null);
+    // }
 
 //     @Override
 //     public List<SpendCategory> getAllCategories(){
@@ -76,5 +76,24 @@ public class SpendCategoryServiceImpl implements SpendCategoryService {
                 .orElseThrow(() -> new ResourceNotFoundException("Category not found"));
         category.setActive(false);
         repository.save(category);
+    }
+
+    @Override
+    public SpendCategory createCategory(SpendCategory category){
+        return scr.save(category);
+    }
+
+    @Override
+    public SpendCategory updateCategory(Long id,SpendCategory category){
+        if(scr.existsById(id)){
+            category.setId(id);
+            return scr.save(category);
+        }
+        return null;
+    }
+
+    @Override
+    public SpendCategory getCategoryById(Long id){
+         return scr.findById(id).orElse(null);
     }
 }
