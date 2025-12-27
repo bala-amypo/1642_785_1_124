@@ -52,6 +52,7 @@ import com.example.demo.service.DiversityTargetService;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/diversitytarget")
 public class DiversityTargetController {
     private final DiversityTargetService service;
     

@@ -53,6 +53,7 @@ import com.example.demo.service.PurchaseOrderService;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/purchaseorders")
 public class PurchaseOrderController {
     private final PurchaseOrderService service;
     

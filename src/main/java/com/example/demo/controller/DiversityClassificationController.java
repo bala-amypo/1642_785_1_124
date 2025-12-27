@@ -53,6 +53,7 @@ import com.example.demo.service.DiversityClassificationService;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/diversityclassification")
 public class DiversityClassificationController {
     private final DiversityClassificationService service;
     
