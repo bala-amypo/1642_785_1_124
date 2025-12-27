@@ -41,10 +41,10 @@
     //     return dcs.getAllClassifications();
     // }
 
-//     @PutMapping("/PUT/classifications/{id}/deactivate")
-//     public void deactivateClassificationById(@PathVariable Long id){
-//         dcs.deactivateClassification(id);
-//     }
+    // @PutMapping("/PUT/classifications/{id}/deactivate")
+    // public void deactivateClassificationById(@PathVariable Long id){
+    //     dcs.deactivateClassification(id);
+    // }
 // }
 
 // package com.example.demo.controller;
@@ -75,7 +75,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
-import java,util
+import java.util.List;
 
 
 import com.example.demo.entity.DiversityClassification;
@@ -88,9 +88,10 @@ public class DiversityClassificationController {
     public DiversityClassificationController(DiversityClassificationService service) {
         this.service = service;
     }
-    @PutMapping("/PUT/classifications/{id}")
-    public DiversityClassification updateValue(@PathVariable Long id,@RequestBody DiversityClassification c){
-        return service.updateClassification(id,c);
+    
+    @PutMapping("/PUT/classifications/{id}/deactivate")
+    public void deactivateClassificationById(@PathVariable Long id){
+        dcs.deactivateClassification(id);
     }
 
     @GetMapping("/GET/classifications")
