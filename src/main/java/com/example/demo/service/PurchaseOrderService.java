@@ -20,7 +20,7 @@ import java.util.List;
 public interface PurchaseOrderService {
     PurchaseOrder createPurchaseOrder(PurchaseOrder purchaseOrder);
     List<PurchaseOrder> getPurchaseOrdersBySupplier(Long supplierId);
-    PurchaseOrder createPurchaseOrder(PurchaseOrder po);
     PurchaseOrder updatePurchaseOrder(Long id,PurchaseOrder po);
     PurchaseOrder getPurchaseOrderByID(Long id);
+    List<PurchaseOrder>getAllPurchaseOrders();
 }
