@@ -80,20 +80,20 @@ public class SpendCategoryServiceImpl implements SpendCategoryService {
 
     @Override
     public SpendCategory createCategory(SpendCategory category){
-        return scr.save(category);
+        return repository.save(category);
     }
 
     @Override
     public SpendCategory updateCategory(Long id,SpendCategory category){
-        if(scr.existsById(id)){
+        if(repository.existsById(id)){
             category.setId(id);
-            return scr.save(category);
+            return repository.save(category);
         }
         return null;
     }
 
     @Override
     public SpendCategory getCategoryById(Long id){
-         return scr.findById(id).orElse(null);
+         return repository.findById(id).orElse(null);
     }
 }
