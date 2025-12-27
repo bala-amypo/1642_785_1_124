@@ -20,4 +20,5 @@ import java.util.List;
 public interface DiversityClassificationService {
     List<DiversityClassification> getAllClassifications();
     void deactivateClassification(Long id);
+    DiversityClassification postClassificationn(DiversityClassification c);
 }

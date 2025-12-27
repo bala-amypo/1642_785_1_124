@@ -99,4 +99,10 @@ public class DiversityClassificationController {
         return service.getAllClassifications();
     }
 
+    @PostMapping("/POST/classifications")
+    public DiversityClassification postClassification(@RequestBody DiversityClassification c){
+          return dcs.createClassification(c);
+    }
+
+
 }

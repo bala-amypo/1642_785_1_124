@@ -78,4 +78,9 @@ public class DiversityClassificationServiceImpl implements DiversityClassificati
         classification.setActive(false);
         repository.save(classification);
     }
+
+    @Override
+    public DiversityClassification postClassificationn(DiversityClassification c){
+         return repository.save(c);
+    }
 }
