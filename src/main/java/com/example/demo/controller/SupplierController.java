@@ -49,7 +49,7 @@ package com.example.demo.controller;
 
 import com.example.demo.service.SupplierService;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.RequestMapping;
 @RestController
 @RequestMapping("/supplier")
 public class SupplierController {

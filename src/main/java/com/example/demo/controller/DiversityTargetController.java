@@ -50,7 +50,7 @@ package com.example.demo.controller;
 
 import com.example.demo.service.DiversityTargetService;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.RequestMapping;
 @RestController
 @RequestMapping("/diversitytarget")
 public class DiversityTargetController {

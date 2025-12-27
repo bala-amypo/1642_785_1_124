@@ -48,7 +48,7 @@ package com.example.demo.controller;
 
 import com.example.demo.service.SpendCategoryService;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.RequestMapping;
 @RestController
 @RequestMapping("/spendcategory")
 public class SpendCategoryController {
