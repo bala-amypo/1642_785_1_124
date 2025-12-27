@@ -21,10 +21,10 @@
 //         this.dcs=dcs;
 //     }
 
-    @PostMapping("/POST/classifications")
-    public DiversityClassification postClassification(@RequestBody DiversityClassification c){
-          return dcs.createClassification(c);
-    }
+    // @PostMapping("/POST/classifications")
+    // public DiversityClassification postClassification(@RequestBody DiversityClassification c){
+    //       return dcs.createClassification(c);
+    // }
 
 //     @PutMapping("/PUT/classifications/{id}")
 //     public DiversityClassification updateValue(@PathVariable Long id,@RequestBody DiversityClassification c){
@@ -101,7 +101,7 @@ public class DiversityClassificationController {
 
     @PostMapping("/POST/classifications")
     public DiversityClassification postClassification(@RequestBody DiversityClassification c){
-          return dcs.createClassification(c);
+          return service.createClassification(c);
     }
 
 
