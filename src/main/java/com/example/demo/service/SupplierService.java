@@ -22,4 +22,5 @@ public interface SupplierService {
     Supplier getSupplierById(Long id);
     List<Supplier> getAllSuppliers();
     void deactivateSupplier(Long id);
+    Supplier updateSupplier(Long id,Supplier supplier)
 }

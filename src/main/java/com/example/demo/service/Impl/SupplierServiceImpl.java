@@ -19,14 +19,14 @@
 //         return sr.save(supplier);
 //     }
 
-//     @Override
-//     public Supplier updateSupplier(Long id,Supplier supplier){
-//         if(sr.existsById(id)){
-//             supplier.setId(id);
-//             return sr.save(supplier);
-//         }
-//         return null;
-//     }
+    // @Override
+    // public Supplier updateSupplier(Long id,Supplier supplier){
+    //     if(sr.existsById(id)){
+    //         supplier.setId(id);
+    //         return sr.save(supplier);
+    //     }
+    //     return null;
+    // }
 
 //     @Override
 //     public Supplier getSupplierById(Long id){
@@ -86,5 +86,14 @@ public class SupplierServiceImpl implements SupplierService {
         Supplier supplier = getSupplierById(id);
         supplier.setIsActive(false);
         supplierRepository.save(supplier);
+    }
+
+    @Override
+    public Supplier updateSupplier(Long id,Supplier supplier){
+        if(supplierRepository.existsById(id)){
+            supplier.setId(id);
+            return supplierRepository.save(supplier);
+        }
+        return null;
     }
 }
