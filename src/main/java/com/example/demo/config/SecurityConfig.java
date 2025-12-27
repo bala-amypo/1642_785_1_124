@@ -54,11 +54,11 @@ public class SecurityConfig {
 //             .csrf(csrf -> csrf.disable())
 //             .authorizeHttpRequests(auth -> auth
 
-//                 /* Swagger */
+//                
 //                 .requestMatchers("/swagger-ui/**", "/v3/api-docs/**")
 //                 .hasAnyRole("ADMIN", "USER")
 
-//                 /* VIEW ACCESS */
+//                
 //                 .requestMatchers(HttpMethod.GET,
 //                         "/diversity-classifications/**",
 //                         "/diversity-targets/**",
@@ -68,7 +68,7 @@ public class SecurityConfig {
 //                         "/users/**"
 //                 ).hasAnyRole("ADMIN", "USER")
 
-//                 /* CREATE */
+//                 
 //                 .requestMatchers(HttpMethod.POST,
 //                         "/diversity-classifications/**",
 //                         "/diversity-targets/**",
