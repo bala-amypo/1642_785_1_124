@@ -23,5 +23,6 @@ public interface DiversityTargetService {
     List<DiversityTarget> getTargetsByYear(Integer year);
     List<DiversityTarget> getAllTargets();
     void deactivateTarget(Long id);
+    DiversityTarget updateTarget(Long id,DiversityTarget target);
 }
 

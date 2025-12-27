@@ -87,9 +87,9 @@ public class DiversityTargetServiceImpl implements DiversityTargetService {
 
     @Override
     public DiversityTarget updateTarget(Long id,DiversityTarget target){
-        if(dtr.existsById(id)){
+        if(repository.existsById(id)){
             target.setId(id);
-            return dtr.save(target);
+            return repository.save(target);
         }
         return null;
     }

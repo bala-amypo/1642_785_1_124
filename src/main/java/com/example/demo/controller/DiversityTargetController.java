@@ -19,30 +19,30 @@
 //     public DiversityTargetController(DiversityTargetService dts){
 //         this.dts=dts;
 //     }
-//     @PostMapping("/POST/targets")
-//     public DiversityTarget createDiversityTarget(@RequestBody DiversityTarget target){
-//         return dts.createTarget(target);
-//     }
+    // @PostMapping("/POST/targets")
+    // public DiversityTarget createDiversityTarget(@RequestBody DiversityTarget target){
+    //     return dts.createTarget(target);
+    // }
  
-//     @PutMapping("/PUT/targets/{id}")
-//     public DiversityTarget updateDiversityTarget(@PathVariable Long id,@RequestBody DiversityTarget target){
-//          return dts.updateTarget(id,target);
-//     }
+    // @PutMapping("/PUT/targets/{id}")
+    // public DiversityTarget updateDiversityTarget(@PathVariable Long id,@RequestBody DiversityTarget target){
+    //      return dts.updateTarget(id,target);
+    // }
 
-//     @GetMapping("/GET/targets/years/{year}")
-//     public List<DiversityTarget> getDiversityTargetsByYear(@PathVariable Integer year){
-//         return dts.getTargetsByYear(year);
-//     }
+    // @GetMapping("/GET/targets/years/{year}")
+    // public List<DiversityTarget> getDiversityTargetsByYear(@PathVariable Integer year){
+    //     return dts.getTargetsByYear(year);
+    // }
 
-//     @GetMapping("/GET/targets")
-//     public List<DiversityTarget> getAllDiversityTargets(){
-//         return dts.getAllTargets();
-//     }
+    // @GetMapping("/GET/targets")
+    // public List<DiversityTarget> getAllDiversityTargets(){
+    //     return dts.getAllTargets();
+    // }
 
-//     @PutMapping("/PUT/targets/{id}/deactivate")
-//     public void deactivateDiversityTarget(Long id){
-//         dts.deactivateTarget(id);
-//     }
+    // @PutMapping("/PUT/targets/{id}/deactivate")
+    // public void deactivateDiversityTarget(Long id){
+    //     dts.deactivateTarget(id);
+    // }
     
 // }
 
@@ -59,6 +59,32 @@ public class DiversityTargetController {
     public DiversityTargetController(DiversityTargetService service) {
         this.service = service;
     }
+     
+    @PostMapping("/POST/targets")
+    public DiversityTarget createDiversityTarget(@RequestBody DiversityTarget target){
+        return service.createTarget(target);
+    }
+ 
+    @PutMapping("/PUT/targets/{id}")
+    public DiversityTarget updateDiversityTarget(@PathVariable Long id,@RequestBody DiversityTarget target){
+         return  service.updateTarget(id,target);
+    }
+
+    @GetMapping("/GET/targets/years/{year}")
+    public List<DiversityTarget> getDiversityTargetsByYear(@PathVariable Integer year){
+        return service.getTargetsByYear(year);
+    }
+
+    @GetMapping("/GET/targets")
+    public List<DiversityTarget> getAllDiversityTargets(){
+        return  service.getAllTargets();
+    }
+
+    @PutMapping("/PUT/targets/{id}/deactivate")
+    public void deactivateDiversityTarget(Long id){
+         service.deactivateTarget(id);
+    }
+
 }
 
 
