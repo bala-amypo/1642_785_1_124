@@ -134,6 +134,7 @@
 
 package com.example.demo.config;
 
+import com.example.demo.security.JwtAuthFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -143,43 +144,51 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
 
-    
-@Bean
-public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    private final JwtAuthFilter jwtAuthFilter;
 
-    http.csrf(csrf -> csrf.disable())
-        .authorizeHttpRequests(auth -> auth
+    public SecurityConfig(JwtAuthFilter jwtAuthFilter) {
+        this.jwtAuthFilter = jwtAuthFilter;
+    }
 
-            .requestMatchers(
-                    "/auth/**",
-                    "/v3/api-docs/**",
-                    "/swagger-ui/**",
-                    "/swagger-ui.html"
-            ).permitAll()
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
-            .requestMatchers(
-                    "/diversityclassification/**",
-                    "/diversitytarget/**"
-            ).hasRole("ADMIN")
+        http.csrf(csrf -> csrf.disable())
+            .authorizeHttpRequests(auth -> auth
 
-            .requestMatchers(
-                    "/supplier/**",
-                    "/purchaseorders/**",
-                    "/spendcategory/**"
-            ).hasAnyRole("USER", "ADMIN")
+                // PUBLIC
+                .requestMatchers(
+                        "/auth/**",
+                        "/v3/api-docs/**",
+                        "/swagger-ui/**",
+                        "/swagger-ui.html"
+                ).permitAll()
 
-            .anyRequest().authenticated()
-        )
-        .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+                // ADMIN ONLY
+                .requestMatchers(
+                        "/diversityclassification/**",
+                        "/diversitytarget/**"
+                ).hasRole("ADMIN")
 
-    return http.build();
-}
+                // USER + ADMIN
+                .requestMatchers(
+                        "/supplier/**",
+                        "/purchaseorders/**",
+                        "/spendcategory/**"
+                ).hasAnyRole("USER", "ADMIN")
 
+                .anyRequest().authenticated()
+            )
+            .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+
+        return http.build();
+    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
