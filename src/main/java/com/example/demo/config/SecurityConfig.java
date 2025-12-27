@@ -162,7 +162,6 @@ public class SecurityConfig {
         http.csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
 
-                // PUBLIC
                 .requestMatchers(
                         "/auth/**",
                         "/v3/api-docs/**",
@@ -170,13 +169,11 @@ public class SecurityConfig {
                         "/swagger-ui.html"
                 ).permitAll()
 
-                // ADMIN ONLY
                 .requestMatchers(
                         "/diversityclassification/**",
                         "/diversitytarget/**"
                 ).hasRole("ADMIN")
 
-                // USER + ADMIN
                 .requestMatchers(
                         "/supplier/**",
                         "/purchaseorders/**",
