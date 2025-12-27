@@ -1,10 +1,10 @@
 // package com.example.demo.controller;
 
-// import java.util.List;
+import java.util.List;
 
-// import org.springframework.web.bind.annotation.GetMapping;
-// import org.springframework.web.bind.annotation.PathVariable;
-// import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 // import org.springframework.web.bind.annotation.PutMapping;
 // import org.springframework.web.bind.annotation.RestController;
 
@@ -36,19 +36,23 @@
 //        return dcs.getById(id);
 //     }
 
-//     @GetMapping("/GET/classifications")
-//     public List<DiversityClassification> retrieveDiversities(){
-//         return dcs.getAllClassifications();
-//     }
+    // @GetMapping("/GET/classifications")
+    // public List<DiversityClassification> retrieveDiversities(){
+    //     return dcs.getAllClassifications();
+    // }
 
-//     @PutMapping("/PUT/classifications/{id}/deactivate")
-//     public void deactivateClassificationById(@PathVariable Long id){
-//         dcs.deactivateClassification(id);
-//     }
+    // @PutMapping("/PUT/classifications/{id}/deactivate")
+    // public void deactivateClassificationById(@PathVariable Long id){
+    //     dcs.deactivateClassification(id);
+    // }
 // }
 
 package com.example.demo.controller;
+import java.util.List;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import com.example.demo.service.DiversityClassificationService;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -61,6 +65,17 @@ public class DiversityClassificationController {
         this.service = service;
     }
 
+    @GetMapping("/GET/classifications")
+    public List<DiversityClassification> retrieveDiversities(){
+        return service.getAllClassifications();
+    }
+
+    @PutMapping("/PUT/classifications/{id}/deactivate")
+    public void deactivateClassificationById(@PathVariable Long id){
+        service.deactivateClassification(id);
+    }
+
     
+
 }
 
