@@ -47,10 +47,16 @@
 // }
 
 package com.example.demo.controller;
-
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import com.example.demo.service.DiversityTargetService;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
+import java.util.List;
+import com.example.demo.entity.DiversityTarget;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 @RestController
 @RequestMapping("/diversitytarget")
 public class DiversityTargetController {
