@@ -51,7 +51,7 @@ import com.example.demo.service.SupplierService;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/supplier")
 public class SupplierController {
     private final SupplierService supplierService;
     
