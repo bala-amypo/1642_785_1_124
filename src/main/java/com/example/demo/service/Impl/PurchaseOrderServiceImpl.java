@@ -39,10 +39,10 @@
     //      return por.findById(id).orElse(null);
     // }
 
-//     @Override
-//     public List<PurchaseOrder>getAllPurchaseOrders(){
-//           return por.findAll();
-//     }
+    // @Override
+    // public List<PurchaseOrder>getAllPurchaseOrders(){
+    //       return por.findAll();
+    // }
 
 //     @Override
 //     public List<PurchaseOrder>getPurchaseOrdersBySupplier(Long supplierId){
@@ -119,5 +119,10 @@ public class PurchaseOrderServiceImpl implements PurchaseOrderService {
     @Override
     public PurchaseOrder getPurchaseOrderByID(Long id){
          return purchaseOrderRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<PurchaseOrder>getAllPurchaseOrders(){
+          return purchaseOrderRepository.findAll();
     }
 }

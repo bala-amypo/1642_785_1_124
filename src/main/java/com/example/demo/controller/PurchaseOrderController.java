@@ -95,10 +95,6 @@ public class PurchaseOrderController {
         return service.getPurchaseOrdersBySupplier(supplierId);
     }
 
-    @GetMapping("/GET/purchase-orderss")
-    public List<PurchaseOrder>getAllPurchaseeOrders(){
-         return service.getAllPurchaseOrders();
-    }
 }
 
 
