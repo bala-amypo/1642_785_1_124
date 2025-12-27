@@ -47,6 +47,23 @@
 //     }
 // }
 
+// package com.example.demo.controller;
+
+// import com.example.demo.service.DiversityClassificationService;
+// import org.springframework.web.bind.annotation.RestController;
+// import org.springframework.web.bind.annotation.RequestMapping;
+// @RestController
+// @RequestMapping("/diversityclassification")
+// public class DiversityClassificationController {
+//     private final DiversityClassificationService service;
+    
+//     public DiversityClassificationController(DiversityClassificationService service) {
+//         this.service = service;
+//     }
+
+
+// }
+
 package com.example.demo.controller;
 
 import com.example.demo.service.DiversityClassificationService;
@@ -60,7 +77,19 @@ public class DiversityClassificationController {
     public DiversityClassificationController(DiversityClassificationService service) {
         this.service = service;
     }
+       @PutMapping("/PUT/classifications/{id}")
+    public DiversityClassification updateValue(@PathVariable Long id,@RequestBody DiversityClassification c){
+        return service.updateClassification(id,c);
+    }
 
+    @GetMapping("/GET/classifications/{id}")
+    public DiversityClassification retrieveDiversityById(@PathVariable Long id){
+       return service.getById(id);
+    }
+
+    @GetMapping("/GET/classifications")
+    public List<DiversityClassification> retrieveDiversities(){
+        return service.getAllClassifications();
+    }
 
 }
-
