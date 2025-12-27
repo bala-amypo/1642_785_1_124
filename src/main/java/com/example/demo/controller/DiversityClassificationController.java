@@ -60,5 +60,7 @@ public class DiversityClassificationController {
     public DiversityClassificationController(DiversityClassificationService service) {
         this.service = service;
     }
+
+    
 }
 
