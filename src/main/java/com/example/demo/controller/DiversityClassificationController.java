@@ -101,7 +101,7 @@ public class DiversityClassificationController {
 
     @PostMapping("/POST/classifications")
     public DiversityClassification postClassification(@RequestBody DiversityClassification c){
-          return service.createClassification(c);
+          return service.postClassificationn(c);
     }
 
 
