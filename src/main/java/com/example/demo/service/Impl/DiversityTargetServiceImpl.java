@@ -20,14 +20,14 @@
 //         return dtr.save(target);
 //     }
 
-//     @Override
-//     public DiversityTarget updateTarget(Long id,DiversityTarget target){
-//         if(dtr.existsById(id)){
-//             target.setId(id);
-//             return dtr.save(target);
-//         }
-//         return null;
-//     }
+    // @Override
+    // public DiversityTarget updateTarget(Long id,DiversityTarget target){
+    //     if(dtr.existsById(id)){
+    //         target.setId(id);
+    //         return dtr.save(target);
+    //     }
+    //     return null;
+    // }
      
 //     @Override
 //     public List<DiversityTarget> getTargetsByYear(Integer year){
@@ -84,4 +84,15 @@ public class DiversityTargetServiceImpl implements DiversityTargetService {
         target.setActive(false);
         repository.save(target);
     }
+
+    @Override
+    public DiversityTarget updateTarget(Long id,DiversityTarget target){
+        if(dtr.existsById(id)){
+            target.setId(id);
+            return dtr.save(target);
+        }
+        return null;
+    }
+
+
 }

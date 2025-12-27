@@ -85,7 +85,6 @@ public class SpendCategory {
         this.active = true;
     }
     
-    // Getters and setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
     
