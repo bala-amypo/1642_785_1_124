@@ -90,7 +90,7 @@ public class SpendCategoryController {
 
     @PutMapping("/PUT/categories/{id}/deactivate")
     public void deactivateCategoryByID(@PathVariable Long id){
-        return service.deactivateCategory(id);
+         service.deactivateCategory(id);
     }
 }
 
