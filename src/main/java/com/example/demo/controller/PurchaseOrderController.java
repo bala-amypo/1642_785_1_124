@@ -36,10 +36,10 @@
 //          return pos.getPurchaseOrderByID(id);
 //     }
 
-//     @GetMapping("/GET/purchase-orderss")
-//     public List<PurchaseOrder>getAllPurchaseeOrders(){
-//          return pos.getAllPurchaseOrders();
-//     }
+    // @GetMapping("/GET/purchase-orderss")
+    // public List<PurchaseOrder>getAllPurchaseeOrders(){
+    //      return pos.getAllPurchaseOrders();
+    // }
 
 //     @GetMapping("/GET/{supplierId}")
 //     public List<PurchaseOrder>getPurchaseeOrdersBySupplier(Long supplierId){
@@ -93,6 +93,11 @@ public class PurchaseOrderController {
     @GetMapping("/GET/{supplierId}")
     public List<PurchaseOrder>getPurchaseeOrdersBySupplier(Long supplierId){
         return service.getPurchaseOrdersBySupplier(supplierId);
+    }
+
+    @GetMapping("/GET/purchase-orderss")
+    public List<PurchaseOrder>getAllPurchaseeOrders(){
+         return service.getAllPurchaseOrders();
     }
 }
 
