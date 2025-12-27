@@ -55,7 +55,7 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
-
+import jakarta.validation.constraints.NotNull;
 @Entity
 public class DiversityTarget {
     @Id
@@ -64,7 +64,11 @@ public class DiversityTarget {
     
     @NotNull
     private Integer targetYear;
+
+    @NotNull
     private Double targetPercentage;
+
+    @NotNull
     private Boolean active;
     
     @ManyToOne
