@@ -17,27 +17,27 @@
 //         this.por=por;
 //     }
 
-//     @Override
-//     public PurchaseOrder createPurchaseOrder(PurchaseOrder po){
-//         if(po.getAmount().compareTo(BigDecimal.ZERO)<=0){
-//             throw new BadRequestException("Purchase amount must be greater than 0");
-//         }
-//         return por.save(po);
-//     }
+    // @Override
+    // public PurchaseOrder createPurchaseOrder(PurchaseOrder po){
+    //     if(po.getAmount().compareTo(BigDecimal.ZERO)<=0){
+    //         throw new BadRequestException("Purchase amount must be greater than 0");
+    //     }
+    //     return por.save(po);
+    // }
 
-//     @Override
-//     public PurchaseOrder updatePurchaseOrder(Long id,PurchaseOrder po){
-//         if(por.existsById(id)){
-//             po.setId(id);
-//             return por.save(po);
-//         }
-//         return null;
-//     }
+    // @Override
+    // public PurchaseOrder updatePurchaseOrder(Long id,PurchaseOrder po){
+    //     if(por.existsById(id)){
+    //         po.setId(id);
+    //         return por.save(po);
+    //     }
+    //     return null;
+    // }
 
-//     @Override
-//     public PurchaseOrder getPurchaseOrderByID(Long id){
-//          return por.findById(id).orElse(null);
-//     }
+    // @Override
+    // public PurchaseOrder getPurchaseOrderByID(Long id){
+    //      return por.findById(id).orElse(null);
+    // }
 
 //     @Override
 //     public List<PurchaseOrder>getAllPurchaseOrders(){
@@ -105,5 +105,27 @@ public class PurchaseOrderServiceImpl implements PurchaseOrderService {
     @Override
     public List<PurchaseOrder> getPurchaseOrdersBySupplier(Long supplierId) {
         return purchaseOrderRepository.findBySupplier_Id(supplierId);
+    }
+
+    @Override
+    public PurchaseOrder createPurchaseOrder(PurchaseOrder po){
+        if(po.getAmount().compareTo(BigDecimal.ZERO)<=0){
+            throw new BadRequestException("Purchase amount must be greater than 0");
+        }
+        return purchaseOrderRepository.save(po);
+    }
+
+    @Override
+    public PurchaseOrder updatePurchaseOrder(Long id,PurchaseOrder po){
+        if(purchaseOrderRepository.existsById(id)){
+            po.setId(id);
+            return purchaseOrderRepository.save(po);
+        }
+        return null;
+    }
+
+    @Override
+    public PurchaseOrder getPurchaseOrderByID(Long id){
+         return purchaseOrderRepository.findById(id).orElse(null);
     }
 }
