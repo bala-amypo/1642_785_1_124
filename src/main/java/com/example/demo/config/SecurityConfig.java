@@ -167,7 +167,6 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
                     "/diversitytarget/**"
             ).hasRole("ADMIN")
 
-            // USER + ADMIN
             .requestMatchers(
                     "/supplier/**",
                     "/purchaseorders/**",
