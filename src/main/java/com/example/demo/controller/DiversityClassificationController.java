@@ -26,15 +26,15 @@
     //       return dcs.createClassification(c);
     // }
 
-//     @PutMapping("/PUT/classifications/{id}")
-//     public DiversityClassification updateValue(@PathVariable Long id,@RequestBody DiversityClassification c){
-//         return dcs.updateClassification(id,c);
-//     }
+    // @PutMapping("/PUT/classifications/{id}")
+    // public DiversityClassification updateValue(@PathVariable Long id,@RequestBody DiversityClassification c){
+    //     return dcs.updateClassification(id,c);
+    // }
 
-//     @GetMapping("/GET/classifications/{id}")
-//     public DiversityClassification retrieveDiversityById(@PathVariable Long id){
-//        return dcs.getById(id);
-//     }
+    // @GetMapping("/GET/classifications/{id}")
+    // public DiversityClassification retrieveDiversityById(@PathVariable Long id){
+    //    return dcs.getById(id);
+    // }
 
     // @GetMapping("/GET/classifications")
     // public List<DiversityClassification> retrieveDiversities(){
@@ -102,6 +102,16 @@ public class DiversityClassificationController {
     @PostMapping("/POST/classifications")
     public DiversityClassification postClassification(@RequestBody DiversityClassification c){
           return service.postClassificationn(c);
+    }
+
+    @PutMapping("/PUT/classifications/{id}")
+    public DiversityClassification updateValue(@PathVariable Long id,@RequestBody DiversityClassification c){
+        return service.updateClassification(id,c);
+    }
+
+    @GetMapping("/GET/classifications/{id}")
+    public DiversityClassification retrieveDiversityById(@PathVariable Long id){
+       return service.getById(id);
     }
 
 

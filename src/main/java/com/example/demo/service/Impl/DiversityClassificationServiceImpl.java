@@ -86,7 +86,7 @@ public class DiversityClassificationServiceImpl implements DiversityClassificati
 
     @Override
     public DiversityClassification updateClassification(Long id,DiversityClassification c){
-        if(dcr.existsById(id)){
+        if(respository.existsById(id)){
             c.setId(id);
             return repository.save(c);
         }
