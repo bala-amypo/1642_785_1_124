@@ -49,6 +49,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+
 public class AuthController {
     private final UserAccountService userAccountService;
     private final AuthenticationManager authenticationManager;
