@@ -61,23 +61,25 @@ public class SpendCategoryController {
     
     @PostMapping("/POST/categories")
     public SpendCategory postSpend(@RequestBody SpendCategory category){
-      return scs.createCategory(category);
+      return service.createCategory(category);
     }
 
     @PutMapping("/PUT/categories/{id}")
     public SpendCategory updateSpendCategory(@PathVariable Long id,@RequestBody SpendCategory category){
-       return scs.updateCategory(id,category);
+       return service.updateCategory(id,category);
     }
 
     @GetMapping("/GET/categories/{id}")
     public SpendCategory getSpendCategoryById(@PathVariable Long id){
-        return scs.getCategoryById(id);
+        return service.getCategoryById(id);
     }
 
     @GetMapping("/GET/categories")
     public List<SpendCategory> getAllSpendCategories(){
-        return scs.getAllCategories();
+        return service.getAllCategories();
     }
+
+    @PutMapping("/")
 }
 
 
