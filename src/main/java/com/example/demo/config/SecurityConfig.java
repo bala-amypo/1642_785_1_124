@@ -106,7 +106,7 @@ public class SecurityConfig {
 
                 // ---- DIVERSITY TARGET ----
                 .requestMatchers(HttpMethod.GET, "/diversitytarget/**").hasAnyRole("USER","ADMIN")
-                .requestMatchers(HttpMethod.POST, "/diversitytarget/**").hasRole("USER","ADMIN")
+                .requestMatchers(HttpMethod.POST, "/diversitytarget/**").hasAnyRole("USER","ADMIN")
                 .requestMatchers(HttpMethod.PUT, "/diversitytarget/**").hasRole("ADMIN")
                 // .requestMatchers(HttpMethod.DELETE, "/diversitytarget/**").hasRole("ADMIN")
 
@@ -118,7 +118,7 @@ public class SecurityConfig {
 
                 // ---- SUPPLIER ----
                 .requestMatchers(HttpMethod.GET, "/supplier/**").hasAnyRole("USER","ADMIN")
-                .requestMatchers(HttpMethod.POST, "/supplier/**").hasRole("USER","ADMIN")
+                .requestMatchers(HttpMethod.POST, "/supplier/**").hasAnyRole("USER","ADMIN")
                 .requestMatchers(HttpMethod.PUT, "/supplier/**").hasRole("ADMIN")
                 // .requestMatchers(HttpMethod.DELETE, "/supplier/**").hasRole("ADMIN")
 
