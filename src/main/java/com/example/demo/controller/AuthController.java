@@ -202,7 +202,7 @@ public class AuthController {
         UserAccount saved = userAccountService.register(userAccount);
        String token = jwtUtil.generateToken(
         saved.getEmail(),
-        user.getRole()
+        saved.getRole()
 );
 
 
