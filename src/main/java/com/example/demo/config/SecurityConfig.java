@@ -35,10 +35,11 @@ public class SecurityConfig {
                         "/swagger-ui.html"
                 ).permitAll()
                 .requestMatchers(
-                        "/diversityclassification/**",
+                       
                         "/diversitytarget/**"
                 ).hasRole("ADMIN")
                 .requestMatchers(
+                         "/diversityclassification/**",
                         "/supplier/**",
                         "/purchaseorders/**",
                         "/spendcategory/**"
