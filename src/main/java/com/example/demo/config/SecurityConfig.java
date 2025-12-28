@@ -112,9 +112,9 @@ public class SecurityConfig {
 
                 // ---- DIVERSITY CLASSIFICATION ----
                 .requestMatchers(HttpMethod.GET, "/diversityclassification/**").hasAnyRole("USER","ADMIN")
-                .requestMatchers(HttpMethod.POST, "/diversityclassification/**").hasRole("ADMIN")
-                .requestMatchers(HttpMethod.PUT, "/diversityclassification/**").hasRole("ADMIN")
-                .requestMatchers(HttpMethod.DELETE, "/diversityclassification/**").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.POST, "/diversityclassification/**").hasAnyRole("USER","ADMIN")
+                .requestMatchers(HttpMethod.PUT, "/diversityclassification/**").hasAnyRole("USER","ADMIN")
+                .requestMatchers(HttpMethod.DELETE, "/diversityclassification/**").hasAnyRole("USER","ADMIN")
 
                 // ---- SUPPLIER ----
                 .requestMatchers(HttpMethod.GET, "/supplier/**").hasAnyRole("USER","ADMIN")
