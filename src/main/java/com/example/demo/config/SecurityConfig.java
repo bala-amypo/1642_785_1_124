@@ -107,23 +107,24 @@ public class SecurityConfig {
                
                 .requestMatchers(HttpMethod.GET, "/diversitytarget/**").hasAnyRole("USER","ADMIN")
                 .requestMatchers(HttpMethod.POST, "/diversitytarget/**").hasAnyRole("USER","ADMIN")
-                .requestMatchers(HttpMethod.PUT, "/diversitytarget/**").hasRole("ADMIN")
+                // .requestMatchers(HttpMethod.PUT, "/diversitytarget/**").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.PUT, "/diversitytarget/**").hasAnyRole("USER","ADMIN")
 
                 .requestMatchers(HttpMethod.GET, "/diversityclassification/**").hasAnyRole("USER","ADMIN")
                 .requestMatchers(HttpMethod.POST, "/diversityclassification/**").hasAnyRole("USER","ADMIN")
-                .requestMatchers(HttpMethod.PUT, "/diversityclassification/**").hasAnyRole("ADMIN")
+                .requestMatchers(HttpMethod.PUT, "/diversityclassification/**").hasAnyRole("USER","ADMIN")
 
                 .requestMatchers(HttpMethod.GET, "/supplier/**").hasAnyRole("USER","ADMIN")
                 .requestMatchers(HttpMethod.POST, "/supplier/**").hasAnyRole("USER","ADMIN")
-                .requestMatchers(HttpMethod.PUT, "/supplier/**").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.PUT, "/supplier/**").hasAnyRole("USER","ADMIN")
 
                 .requestMatchers(HttpMethod.GET, "/purchaseorders/**").hasAnyRole("USER","ADMIN")
                 .requestMatchers(HttpMethod.POST, "/purchaseorders/**").hasAnyRole("USER","ADMIN")
-                .requestMatchers(HttpMethod.PUT, "/purchaseorders/**").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.PUT, "/purchaseorders/**").hasAnyRole("USER","ADMIN")
 
                 .requestMatchers(HttpMethod.GET, "/spendcategory/**").hasAnyRole("USER","ADMIN")
                 .requestMatchers(HttpMethod.POST, "/spendcategory/**").hasAnyRole("USER","ADMIN")
-                .requestMatchers(HttpMethod.PUT, "/spendcategory/**").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.PUT, "/spendcategory/**").hasAnyRole("USER","ADMIN")
 
                 .anyRequest().authenticated()
             )
