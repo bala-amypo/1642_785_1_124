@@ -2,7 +2,8 @@ package com.example.demo.service.impl;
 
 import com.example.demo.entity.UserAccount;
 import com.example.demo.exception.BadRequestException;
-import com.example.demo.exception.ResourceNotFoundException;
+// import com.example.demo.exception.ResourceNotFoundException;
+import com.example.demo.exception.UnauthorizedException;
 import com.example.demo.repository.UserAccountRepository;
 import com.example.demo.service.UserAccountService;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -36,6 +37,6 @@ public class UserAccountServiceImpl implements UserAccountService {
 
         return repository.findByEmail(email)
                 .orElseThrow(() ->
-                        new ResourceNotFoundException("User not found with email: " + email));
+                        new UnauthorizedException("User not found with email: " + email));
     }
 }

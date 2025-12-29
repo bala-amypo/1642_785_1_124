@@ -1,24 +1,24 @@
-// package com.example.demo.exception;
-// import org.springframework.web.bind.annotation.RestControllerAdvice;
-// import org.springframework.web.bind.annotation.ExceptionHandler;
-// import org.springframework.http.ResponseEntity;
-// import org.springframework.http.HttpStatus;
+package com.example.demo.exception;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
 
-// @RestControllerAdvice
-// public class GlobalExceptionHandler{
+@RestControllerAdvice
+public class GlobalExceptionHandler{
 
-//     @ExceptionHandler(ResourceNotFoundException.class)
-//     public ResponseEntity<String> handleResourceNotFoundException(ResourceNotFoundException ex){
-//         return new ResponseEntity<String>(ex.getMessage(),HttpStatus.BAD_GATEWAY);
-//     }
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<String> handleResourceNotFoundException(ResourceNotFoundException ex){
+        return new ResponseEntity<String>(ex.getMessage(),HttpStatus.BAD_GATEWAY);
+    }
 
-//     @ExceptionHandler(BadRequestException.class)
-//     public ResponseEntity<String> handleBadRequestException(BadRequestException ex){
-//         return new ResponseEntity<String>(ex.getMessage(),HttpStatus.BAD_GATEWAY);
-//     }
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity<String> handleBadRequestException(BadRequestException ex){
+        return new ResponseEntity<String>(ex.getMessage(),HttpStatus.BAD_GATEWAY);
+    }
 
-//     @ExceptionHandler(UnauthorizedException.class)
-//     public ResponseEntity<String> UnauthorizedException(UnauthorizedException ex){
-//         return new ResponseEntity<String>(ex.getMessage(),HttpStatus.BAD_GATEWAY);
-//     }
-// }
+    @ExceptionHandler(UnauthorizedException.class)
+    public ResponseEntity<String> UnauthorizedException(UnauthorizedException ex){
+        return new ResponseEntity<String>(ex.getMessage(),HttpStatus.BAD_GATEWAY);
+    }
+}
