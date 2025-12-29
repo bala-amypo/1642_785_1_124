@@ -122,7 +122,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.PUT, "/purchaseorders/**").hasRole("ADMIN")
 
                 .requestMatchers(HttpMethod.GET, "/spendcategory/**").hasAnyRole("USER","ADMIN")
-                .requestMatchers(HttpMethod.POST, "/spendcategory/**").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.POST, "/spendcategory/**").hasAnyRole("USER","ADMIN")
                 .requestMatchers(HttpMethod.PUT, "/spendcategory/**").hasRole("ADMIN")
 
                 .anyRequest().authenticated()
