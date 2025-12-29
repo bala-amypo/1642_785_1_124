@@ -104,35 +104,26 @@ public class SecurityConfig {
                         "/swagger-ui.html"
                 ).permitAll()
 
-                // ---- DIVERSITY TARGET ----
+               
                 .requestMatchers(HttpMethod.GET, "/diversitytarget/**").hasAnyRole("USER","ADMIN")
                 .requestMatchers(HttpMethod.POST, "/diversitytarget/**").hasAnyRole("USER","ADMIN")
                 .requestMatchers(HttpMethod.PUT, "/diversitytarget/**").hasRole("ADMIN")
-                // .requestMatchers(HttpMethod.DELETE, "/diversitytarget/**").hasRole("ADMIN")
 
-                // ---- DIVERSITY CLASSIFICATION ----
                 .requestMatchers(HttpMethod.GET, "/diversityclassification/**").hasAnyRole("USER","ADMIN")
                 .requestMatchers(HttpMethod.POST, "/diversityclassification/**").hasAnyRole("USER","ADMIN")
                 .requestMatchers(HttpMethod.PUT, "/diversityclassification/**").hasAnyRole("ADMIN")
-                // .requestMatchers(HttpMethod.DELETE, "/diversityclassification/**").hasAnyRole("USER","ADMIN")
 
-                // ---- SUPPLIER ----
                 .requestMatchers(HttpMethod.GET, "/supplier/**").hasAnyRole("USER","ADMIN")
                 .requestMatchers(HttpMethod.POST, "/supplier/**").hasAnyRole("USER","ADMIN")
                 .requestMatchers(HttpMethod.PUT, "/supplier/**").hasRole("ADMIN")
-                // .requestMatchers(HttpMethod.DELETE, "/supplier/**").hasRole("ADMIN")
 
-                // ---- PURCHASE ORDERS ----
                 .requestMatchers(HttpMethod.GET, "/purchaseorders/**").hasAnyRole("USER","ADMIN")
                 .requestMatchers(HttpMethod.POST, "/purchaseorders/**").hasAnyRole("USER","ADMIN")
                 .requestMatchers(HttpMethod.PUT, "/purchaseorders/**").hasRole("ADMIN")
-                // .requestMatchers(HttpMethod.DELETE, "/purchaseorders/**").hasRole("ADMIN")
 
-                // ---- SPEND CATEGORY ----
                 .requestMatchers(HttpMethod.GET, "/spendcategory/**").hasAnyRole("USER","ADMIN")
                 .requestMatchers(HttpMethod.POST, "/spendcategory/**").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.PUT, "/spendcategory/**").hasRole("ADMIN")
-                // .requestMatchers(HttpMethod.DELETE, "/spendcategory/**").hasRole("ADMIN")
 
                 .anyRequest().authenticated()
             )
